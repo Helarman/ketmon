@@ -6,7 +6,7 @@ interface IParams {
 
 export default async function getJob({ params }: { params: IParams }) {
     try {
-        const res = await axios.get(`https://ketmon.onrender.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=*`);
+        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=*`);
         const job = res.data.data[0];
 
         if (!job) {

@@ -25,7 +25,7 @@ export const fixTinaResults = <T>(data: T): T => {
 
 export default async function getvAilableStatus({ params }: { params: IParams }) {
     try {
-        const res = await axios.get(`https://ketmon.onrender.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=users`);
+        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=users`);
 
         const data = res
 

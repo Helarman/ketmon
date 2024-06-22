@@ -9,7 +9,7 @@ interface CityProps {
 
 export default async function getCities() {
     try {
-        const res = await axios.get(`https://ketmon.onrender.com/api/cities`);
+        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/cities`);
         const categories = res.data.data.map((city: CityProps) => city.attributes.name);
 
         if (!categories) {

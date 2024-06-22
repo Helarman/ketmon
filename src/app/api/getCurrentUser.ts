@@ -9,7 +9,7 @@ export const getCurrentUser = async () => {
     }
 
     try {
-        const response = await axios.get(`https://ketmon.onrender.com/api/users?filters[username][$eq]=${username}`);
+        const response = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/users?filters[username][$eq]=${username}`);
         return response.data[0];
 
     } catch (error) {

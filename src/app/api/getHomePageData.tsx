@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function getHomePageData() {
     try {
-        const res = await axios.get(`https://ketmon.onrender.com/api/home-page?populate=deep`);
+        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/home-page?populate=deep`);
 
         const data = res.data
 

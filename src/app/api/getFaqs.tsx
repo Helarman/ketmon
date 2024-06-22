@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function getFaqs() {
     try {
-        const res = await axios.get(`https://ketmon.onrender.com/api/faqs?populate=*`);
+        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/faqs?populate=*`);
 
         const faq = res.data.data
 
