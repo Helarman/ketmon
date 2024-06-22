@@ -16,7 +16,7 @@ const JobSearchSection = ({cities, categories, image} : {cities: string[], categ
                     <JobSearch categories={categories} cities={cities}/>
                 </Grid>
                 <Grid item xs={12} lg={6} order={isSmallScreen ? 1 : 2}>
-                    <img src={`http://localhost:1337${image.data.attributes.url}`} style={{ width: '100%' }} />
+                    <img src={`https://ketmon.onrender.com${image.data.attributes.url}`} style={{ width: '100%' }} />
                 </Grid>
             </Grid>
         </>

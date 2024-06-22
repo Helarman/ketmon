@@ -7,7 +7,7 @@ export async function setBalance({ currentUser, value }: { currentUser: UserProp
 
     try {
         await axios.put(
-            `http://127.0.0.1:1337/api/users/${currentUser.id}`,
+            `https://ketmon.onrender.com/api/users/${currentUser.id}`,
             {
                 balance: value
             }

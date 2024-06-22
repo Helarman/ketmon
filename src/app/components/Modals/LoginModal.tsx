@@ -35,7 +35,7 @@ const LoginModal = () => {
         setLoading(true);
 
         try {
-            const { data } = await axios.post('http://localhost:1337/api/auth/local', {
+            const { data } = await axios.post('https://ketmon.onrender.com/api/auth/local', {
                 identifier: username,
                 password: password,
             });
