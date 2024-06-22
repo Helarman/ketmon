@@ -112,7 +112,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                         { label: 'Найти работу', href: '/jobs' },
                         { label: 'Размаестить вакансию', href: '/jobs' }]
                     }
-                    image={`https://excellent-dinosaur-a7b8ad2006.strapiapp.com${data.Header[0].image.data.attributes.url}`}
+                    image={data.Header[0].image.data.attributes.url}
                 />
                 <Steps steps={data.steps[0]} title={'Как начать искать работу?'} />
                 <JobSearchSection image={data.jobSearchImage} categories={categories} cities={cities} />
