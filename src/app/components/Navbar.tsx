@@ -17,9 +17,9 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
     const pages = [
         { label: 'Главная', href: '/' },
         { label: 'Работа', href: '/jobs' },
-        //{ label: 'Недвижимость', href: '/realestates' },
-        //{ label: 'Документы', href: '/documents' },
-        //{ label: 'Мошенники', href: '/scammers' },
+        { label: 'Недвижимость', href: '/realestates' },
+        { label: 'Найденные вещи', href: '/items' },
+        { label: 'Мошенники', href: '/scammers' },
         { label: 'Помощь', href: '/faq' },
     ];
 
@@ -106,18 +106,18 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
                             ))}
                         </Menu>
 
-                        {isScrolled ?
+                        {/*isScrolled ?
                             <img src="logo.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
                             :
                             <img src="logo2.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
-                        }
+                        */}
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        {isScrolled ?
+                        {/*isScrolled ?
                             <img src="logo.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
                             :
                             <img src="logo2.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
-                        }
+                        */}
 
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

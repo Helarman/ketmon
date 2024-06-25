@@ -48,7 +48,7 @@ const RegistrationModal = () => {
 
 
         try {
-            const { data } = await axios.post('https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/auth/local/register', userData);
+            const { data } = await axios.post('http://127.0.0.1:1337/api/auth/local/register', userData);
             Cookies.set('jwt', data.jwt, { sameSite: "None" });
             Cookies.set('username', data.user.username, { sameSite: "None" });
             registrationModal.onClose();

@@ -85,7 +85,7 @@ const Footer = () => {
                     </Grid>
                     */}
                     <Grid item xs={12} md={12} sx={{ textAlign: 'center' }}>
-                        <img src="logo.png" style={{ height: '5rem', marginBottom: '1rem' }} alt="" />
+                        {/*<img src="logo.png" style={{ height: '5rem', marginBottom: '1rem' }} alt="" />*/}
                         <Box>
                             <IconButton color="inherit">
                                 <YouTube />

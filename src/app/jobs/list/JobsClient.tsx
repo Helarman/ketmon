@@ -45,7 +45,7 @@ const JobsClient = ({ jobs, pagination, categories, cities }: { jobs: JobProps[]
 
                     {pagination.pageCount > 1 ?
                         < Box
-
+                            sx={{mt: '20px'}}
                             display="flex"
                             justifyContent="center"
                             alignItems="center"

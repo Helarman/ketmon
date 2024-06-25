@@ -1,192 +1,51 @@
 'use client'
 
-import { Select, MenuItem, TextField, Slider, FormControl, InputLabel, Grid, Button, Box, Autocomplete } from '@mui/material';
+import { Button, Box, Autocomplete, TextField } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 
-const FilteringMenu = () => {
-    return null;
-    const cities = [
-        'Белгородская область',
+const FilteringMenu = ({ cities }: { cities: string[] }) => {
+    const router = useRouter();
 
-        'Брянская область',
+    const [city, setCity] = useState<string | null>(null);
+    const [type, setType] = useState<string | null>(null);
+    const [rooms, setRooms] = useState<string | null>(null);
+    const [minPrice, setMinPrice] = useState<string | null>(null);
+    const [maxPrice, setMaxPrice] = useState<string | null>(null);
 
-        'Владимирская область',
+    let searchQuery = '';
 
-        'Воронежская область',
+    if (type) {
+        searchQuery = searchQuery + `&type=${type}`
+    }
 
-        'Ивановская область',
+    if (rooms) {
+        searchQuery = searchQuery + `&rooms=${rooms}`
+    }
 
-        'Калужская область',
+    if (city) {
+        searchQuery = searchQuery + `&city=${city}`
+    }
 
-        'Костромская область',
+    if (minPrice) {
+        searchQuery = searchQuery + `&minPrice=${minPrice}`
+    }
 
-        'Курская область',
-
-        'Липецкая область',
-
-        'Московская область',
-
-        'Орловская область',
-
-        'Рязанская область',
-
-        'Смоленская область',
-
-        'Тамбовская область',
-
-        'Тверская область',
-
-        'Тульская область',
-
-        'Ярославская область',
-
-        'Москва',
-
-        'Республика Адыгея',
-
-        'Республика Калмыкия',
-
-        'Краснодарский край',
-
-        'Астраханская область',
-
-        'Волгоградская область',
-
-        'Ростовская область',
-
-        'Республика Карелия',
-
-        'Республика Коми',
-
-        'Архангельская область',
-
-        'Вологодская область',
-
-        'Калининградская область',
-
-        'Ленинградская область',
-
-        'Мурманская область',
-
-        'Новгородская область',
-        'Псковская область',
-
-        'Санкт-Петербург',
-
-        'Ненецкий автономный округ',
-
-        'Республика Саха (Якутия)',
-
-        'Камчатский край',
-
-        'Приморский край',
-
-        'Хабаровский край',
-
-        'Амурская область',
-
-        'Магаданская область',
-
-        'Сахалинская область',
-
-        'Еврейская автономная область',
-
-        'Чукотский автономный округ',
-
-        'Республика Алтай',
-
-        'Республика Бурятия',
-
-        'Республика Тыва',
-
-        'Республика Хакасия',
-
-        'Алтайский край',
-
-        'Забайкальский край',
-
-        'Красноярский край',
-
-        'Иркутская область',
-
-        'Кемеровская область',
-
-        'Новосибирская область',
-
-        'Омская область',
-
-        'Томская область',
-
-        'Курганская область',
-
-        'Свердловская область',
-
-        'Тюменская область',
-
-        'Челябинская область',
-
-        'Ханты-Мансийский автономный округ — Югра',
-
-        'Ямало-Ненецкий автономный округ',
-
-        'Республика Башкортостан',
-
-        'Республика Марий Эл',
-
-        'Республика Мордовия',
-
-        'Республика Татарстан',
-
-        'Удмуртская Республика',
-
-        'Чувашская Республика',
-
-        'Кировская область',
-
-        'Нижегородская область',
-
-        'Оренбургская область',
-
-        'Пензенская область',
-
-        'Пермский край',
-
-        'Самарская область',
-
-        'Саратовская область',
-
-        'Ульяновская область',
-
-        'Республика Дагестан',
-
-        'Республика Ингушетия',
-
-        'Кабардино-Балкарская Республика',
-
-        'Карачаево-Черкесская Республика',
-
-        'Республика Северная Осетия — Алания',
-
-        'Чеченская Республика',
-
-        'Ставропольский край']
+    if (maxPrice) {
+        searchQuery = searchQuery + `&maxPrice=${maxPrice}`
+    }
 
     return (
         <Box sx={{ mr: '40px' }}>
             <form>
                 <Autocomplete
-                    options={cities}
-                    renderInput={(params) =>
-                        <TextField
-                            {...params}
-                            label="Регион"
-                            variant="standard"
-                        />
-                    }
-                />
-                <Autocomplete
+                    value={city}
+                    onChange={(event: any, newValue: any) => {
+                        setCity(newValue);
+                    }}
                     sx={{ mb: '10px', mt: '10px' }}
-                    options={['Option 1', 'Option 2', 'Option 3']}
+                    options={cities}
                     renderInput={(params) =>
                         <TextField
                             {...params}
@@ -196,8 +55,26 @@ const FilteringMenu = () => {
                     }
                 />
                 <Autocomplete
-                    multiple
-                    options={['Студия', '1', '2', '3', '4', '5', 'Более']}
+                    sx={{ mb: '10px'    }}
+                    value={type}
+                    onChange={(event: any, newValue: any) => {
+                        setType(newValue);
+                    }}
+                    options={['Квартира', 'Комната', 'Дом']}
+                    renderInput={(params) =>
+                        <TextField
+                            {...params}
+                            label="Тип недвижимости"
+                            variant="standard"
+                        />
+                    }
+                />
+                <Autocomplete
+                    value={rooms}
+                    onChange={(event: any, newValue: any) => {
+                        setRooms(newValue);
+                    }}
+                    options={['1', '2', '3', '4', '5', 'Более']}
                     renderInput={(params) =>
                         <TextField
                             {...params}
@@ -207,6 +84,10 @@ const FilteringMenu = () => {
                     }
                 />
                 <TextField
+                    value={minPrice}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setMinPrice(event.target.value);
+                    }}
                     type='number'
                     label="Мин.Цена"
                     fullWidth
@@ -214,6 +95,10 @@ const FilteringMenu = () => {
                     margin="normal"
                 />
                 <TextField
+                    value={maxPrice}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setMaxPrice(event.target.value);
+                    }}
                     type='number'
                     label="Макс.Цена"
                     fullWidth
@@ -221,7 +106,7 @@ const FilteringMenu = () => {
                     margin="normal"
                 />
                 <Box sx={{ mt: '20px', mb: '20px' }}>
-                    <Button type="submit">
+                    <Button color='error' variant='contained' sx={{ width: '100%' }} onClick={() => router.push(`/realestates/list?page=1${searchQuery}`)}>
                         Поиск
                     </Button>
                 </Box>

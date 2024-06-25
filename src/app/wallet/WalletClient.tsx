@@ -3,11 +3,11 @@ import { Box, Typography } from "@mui/material"
 import WalletCard from "../components/Cards/WalletCard";
 import WalletReplen from "../components/Inputs/WalletReplen";
 import toast from "react-hot-toast";
-import { UserProps } from "../types";
+import { WalletButtonProps, UserProps } from "../types";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const WalletClient = ({ currentUser }: { currentUser: UserProps }) => {
+const WalletClient = ({ currentUser, banks, contacts }: { currentUser: UserProps, banks: WalletButtonProps[], contacts: WalletButtonProps[] }) => {
     const router = useRouter()
 
     if (!currentUser) {
@@ -22,7 +22,7 @@ const WalletClient = ({ currentUser }: { currentUser: UserProps }) => {
             </Typography>
             <WalletCard balance={currentUser.balance} />
 
-            <WalletReplen />
+            <WalletReplen banks={banks} contacts={contacts}/>
         </Box >
 
     )

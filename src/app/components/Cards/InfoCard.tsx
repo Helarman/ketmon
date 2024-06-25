@@ -16,20 +16,22 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { setBalance } from '@/app/api/changeBalance';
 import { addJobToUser } from '@/app/api/addJobToUser';
+import { addRealEstateToUser } from '@/app/api/addRealEstateToUser';
 
 interface InfoCardProps {
   id: number;
   date: string;
   title: string;
   price: number;
-  sallary: string;
+  sallary: string | number;
   adress: string;
   contacts: ContactsProps[];
   isAvailable: boolean;
   currentUser: UserProps;
+  isJob: boolean
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, contacts, isAvailable, currentUser, sallary }) => {
+const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, contacts, isAvailable, currentUser, sallary, isJob }) => {
   const router = useRouter()
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -43,6 +45,11 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
   const addJob = async () => {
     await addJobToUser({ currentUser, id })
   }
+
+  const addRealEstate = async () => {
+    await addRealEstateToUser({ currentUser, id })
+  }
+
 
   const buyContacts = async () => {
     if (!currentUser) {
@@ -63,7 +70,12 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
       return null;
     }
     try {
-      addJob()
+      if (isJob) {
+        addJob()
+      }
+      if (!isJob){
+        addRealEstate()
+      }
     } catch (error: any) {
       toast.error('Ошибка')
       return null;
@@ -98,6 +110,8 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
           {adress}
         </Typography>
       </CardContent>
+      
+      
       <CardActions sx={{ ml: '10px' }}>
         {isAvailable ?
           contacts.map((contact) => (

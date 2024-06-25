@@ -39,14 +39,16 @@ const JobClient = ({ job, isAvailable, currentUser }: { job: JobProps, isAvailab
     if (job.attributes.minSalary == job.attributes.maxSalary) {
         sallary = `${job.attributes.minSalary}₽`
     }
-
+    const createdDate = new Date(job.attributes.createdAt).toLocaleDateString()
+    const createdTime = new Date(job.attributes.createdAt).toLocaleTimeString().slice(0, -3)
+    
     return (
         <>
            
             <Box sx={{ mb: '70px' }}>
                 <Grid spacing={2} container>
                     <Grid item xs={12} md={8}>
-                        <InfoCard id={job.id} currentUser={currentUser} date={job.attributes.createdAt} title={job.attributes.name} price={job.attributes.price} sallary={sallary} adress={`${job.attributes.city.data.attributes.name},  ${job.attributes.locationName}`} isAvailable={isAvailable} contacts={job.attributes.contacts} />
+                        <InfoCard id={job.id} currentUser={currentUser} date={`${createdDate} в ${createdTime}`} title={job.attributes.name} price={job.attributes.price} sallary={sallary} adress={`${job.attributes.city.data.attributes.name},  ${job.attributes.locationName}`} isAvailable={isAvailable} contacts={job.attributes.contacts} isJob={true} />
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <EmployerCard name={job.attributes.employer.data.attributes.name} rating={job.attributes.employer.data.attributes.rating} description={job.attributes.employer.data.attributes.description} adress={job.attributes.employer.data.attributes.locationName} />

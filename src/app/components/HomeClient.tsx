@@ -100,8 +100,8 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
 
             >
                 <StyledTab label="Работа" />
-                <StyledTab label="недвижимость" disabled />
-                <StyledTab label="документы" disabled />
+                <StyledTab label="недвижимость" />
+                <StyledTab label="документы" />
             </StyledTabs>
 
             <TabConent value={value} index={0}>
@@ -119,33 +119,33 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                 <RecentJob jobs={data.RecentJobs} />
             </TabConent>
 
-            {/*<TabConent value={value} index={1}>
+            <TabConent value={value} index={1}>
                 <HeaderItem
-                    title={'Просто найди недвижемость!'}
-                    subTitle={'Множество объявлений по всей стране!'}
+                    title={data.Header[1].Title}
+                    subTitle={data.Header[1].subTitle}
                     buttons={[
                         { label: 'Найти недвижимость!', href: '/real-estates' },
                         { label: 'Разместить объявление', href: '/real-estates' }]
                     }
-                    image={'realestate.svg'}
+                    image={data.Header[1].image.data.attributes.url}
                 />
                 <Steps steps={data.steps[1]} title={'Как начать поиск недвижимости?'} />
-                <RealEstateSearchSection />
-                <RecentRealEstate />
+                <RealEstateSearchSection image={data.realEstateSearch} cities={cities} />
+                <RecentRealEstate realEstates={data.RecetRealEstates}/>
             </TabConent>
 
             <TabConent value={value} index={2}>
                 <HeaderItem
-                    title={'Просто найди документы!'}
-                    subTitle={'Все найденые документы тут!'}
+                   title={data.Header[2].Title}
+                   subTitle={data.Header[2].subTitle}
                     buttons={[
-                        { label: 'Найти документы', href: '/documents' },
-                        { label: 'Нашел документы', href: '/documents' }]
+                        { label: 'Найти вещи', href: '/documents' },
+                        { label: 'Нашел вещи', href: '/documents' }]
                     }
-                    image={'doc.svg'}
+                    image={data.Header[2].image.data.attributes.url}
                 />
-                <Steps steps={data.steps[2]} title={'Как найти свои документы?'} />
-            </TabConent>*/}
+                <Steps steps={data.steps[2]} title={'Как найти свои потеряные вещи?'} />
+            </TabConent>
 
 
         </header>

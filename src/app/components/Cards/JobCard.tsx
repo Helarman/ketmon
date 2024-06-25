@@ -36,7 +36,7 @@ const JobCard = ({job} : {job: JobProps}) => {
                         {job.attributes.name}
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
-                        {sallary}
+                        {sallary}₽
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {job.attributes.city.data.attributes.name}, {job.attributes.locationName}

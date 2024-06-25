@@ -83,3 +83,73 @@ export interface ImageProps {
         }
     }
 }
+export interface ImagesProps {
+    data: {
+        id: number;
+        attributes: {
+            name: string;
+            alternativeText: string | null;
+            url: string;
+        }
+    }[]
+}
+
+
+export interface LandlordProps {
+    id: number;
+    attributes: {
+        name: string;
+        description: string;
+        rating: number;
+        locationName: string;
+        isScammer: boolean;
+        isCompany: boolean;
+    }
+}
+
+export interface RealEstateProps {
+    id: number
+    attributes: {
+        type: string;
+        size: number;
+        rooms: number;
+        perMonth: number;
+        price: number;
+        description: string;
+        createdAt: string;
+        locationName: string;
+        locationCoordinates: {
+            address: string;
+            coordinates: {
+                lat: number;
+                lng: number;
+            },
+            geohash: string;
+        },
+        slug: string;
+        landlord: {
+            data: EmployerProps
+        },
+        city: {
+            data: {
+                id: number;
+                attributes: {
+                    name: string;
+                }
+            }
+        },
+        contacts: ContactsProps[];
+        images: ImagesProps;
+    }
+}
+
+
+export interface WalletButtonProps {
+    id: number;
+    attributes: {
+        name: string;
+        link: string;
+        color: string;
+        background: string;
+    }
+}

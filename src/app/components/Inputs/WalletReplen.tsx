@@ -8,10 +8,11 @@ import Button from '@mui/material/Button';
 import { Card, CardActions, CardContent, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import { useRouter } from 'next/navigation';
+import { WalletButtonProps } from '@/app/types';
 
 const steps = ['Переведите деньги', 'Напишите о переводе', 'Пополнение выполнено'];
 
-const CustomButton = styled(Button)(({ bgcolor, textcolor }: { bgcolor: string, textcolor: string }) => ({
+const CustomButton = styled(Button)(({ bgcolor, textcolor, element, href, target }: { bgcolor: string, textcolor: string, element: string, href: string, target: string }) => ({
     display: 'flex',
     fontSize: '1.4rem',
     alignItems: 'center',
@@ -31,68 +32,63 @@ const CustomButton = styled(Button)(({ bgcolor, textcolor }: { bgcolor: string, 
 const ColoredButton = (
     {
         bankName,
-        onClick,
+        link,
         bgcolor,
         textcolor
     }
-    :
-    {
-        bankName: string;
-        onClick: () => void;
-        bgcolor: string;
-        textcolor: string;
-    }
+        :
+        {
+            bankName: string;
+            link: string;
+            bgcolor: string;
+            textcolor: string;
+        }
 ) => {
     return (
-        <CustomButton onClick={onClick} bgcolor={bgcolor} textcolor={textcolor}>
+        <CustomButton element='a' href={link} target="_blank" bgcolor={bgcolor} textcolor={textcolor}>
             {bankName}
         </CustomButton>
     );
 };
 
-const FirstStep = () => {
+const FirstStep = ({ banks }: { banks: WalletButtonProps[] }) => {
     return (
         <Box sx={{ py: '20px' }}>
-            <ColoredButton
-                bankName="Сбербанк"
-                bgcolor="#3a9f5f"
-                textcolor="#ffffff"
-                onClick={() => console.log('Оплата через Сбербанк')}
-            />
-            <ColoredButton
-                bankName="ВТБ"
-                bgcolor="#004488"
-                textcolor="#ffffff"
-                onClick={() => console.log('Оплата через ВТБ')}
-            />
-            <ColoredButton
-                bankName="Т-Банк"
-                bgcolor="#ffdd2d"
-                textcolor="#000000"
-                onClick={() => console.log('Оплата через Альфа-Банк')}
-            />
+
+            {banks && banks.map((bank) =>
+            (
+                <div key={bank.id}>
+                    <ColoredButton
+                        bankName={bank.attributes.name}
+                        bgcolor={bank.attributes.background}
+                        textcolor={bank.attributes.color}
+                        link={bank.attributes.link}
+                    />
+                </div>
+            ))}
         </Box>
     )
 };
 
-const SecondStep = () => {
+
+const SecondStep = ({ contacts }: { contacts: WalletButtonProps[] }) => {
     return (
         <Box sx={{ py: '20px' }}>
-            <ColoredButton
-                bankName="WhatsApp"
-                bgcolor="#25D366"
-                textcolor="#ffffff"
-                onClick={() => console.log('Оплата через Сбербанк')}
-            />
-            <ColoredButton
-                bankName="Telegram"
-                bgcolor="#24A1DE"
-                textcolor="#ffffff"
-                onClick={() => console.log('Оплата через Сбербанк')}
-            />
+            {contacts && contacts.map((contact) =>
+            (
+                <div key={contact.id}>
+                    <ColoredButton
+                        bankName={contact.attributes.name}
+                        bgcolor={contact.attributes.background}
+                        textcolor={contact.attributes.color}
+                        link={contact.attributes.link}
+                    />
+                </div>
+            ))}
         </Box>
     )
 };
+
 const ThirdStep = () => {
     return (
         <Box sx={{ py: '20px', textAlign: 'center' }}>
@@ -104,7 +100,7 @@ const ThirdStep = () => {
 };
 
 
-const WalletReplen = () => {
+const WalletReplen = ({ banks, contacts }: { banks: WalletButtonProps[], contacts: WalletButtonProps[] }) => {
     const router = useRouter()
     const [activeStep, setActiveStep] = React.useState(0);
 
@@ -123,8 +119,8 @@ const WalletReplen = () => {
     };
 
     const stepContents: { [key: number]: JSX.Element } = {
-        0: <FirstStep />,
-        1: <SecondStep />,
+        0: <FirstStep banks={banks} />,
+        1: <SecondStep contacts={contacts} />,
         2: <ThirdStep />,
     };
 
