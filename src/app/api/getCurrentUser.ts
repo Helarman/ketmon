@@ -9,7 +9,7 @@ export const getCurrentUser = async () => {
     }
 
     try {
-        const response = await axios.get(`http://127.0.0.1:1337/api/users?filters[username][$eq]=${username}`);
+        const response = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/users?filters[username][$eq]=${username}`);
         return response.data[0];
 
     } catch (error) {
