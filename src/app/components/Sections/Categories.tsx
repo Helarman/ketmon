@@ -16,7 +16,7 @@ const Categories = ({categories, title, isRealEstate} : {title: string, categori
             <Grid container>
                 {categories.map((category, index) => (
                     <Grid item lg={6} sm={12} key={index}>
-                        <Button onClick={() => router.push(`${isRealEstate ? '/realestates/list?page=1?city=' : '/jobs/list?page=1&category='}${category}`)} className={classes.categoryButton}>{category}</Button>
+                        <Button onClick={() => router.push(`${isRealEstate ? '/realestates/list?page=1&city=' : '/jobs/list?page=1&category='}${category}`)} className={classes.categoryButton}>{category}</Button>
                     </Grid>
                 ))}
             </Grid>
