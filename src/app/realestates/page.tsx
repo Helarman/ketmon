@@ -20,7 +20,7 @@ const RealEstatePage = async () => {
                 </Typography>
                 <RealEstateSearch cities={cities} />
             </Box>
-            <Categories title={'Объявления по регионам'} categories={cities} />
+            <Categories title={'Объявления по регионам'} categories={cities} isRealEstate/>
         </>
     )
 };
