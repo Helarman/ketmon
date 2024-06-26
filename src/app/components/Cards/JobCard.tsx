@@ -41,13 +41,13 @@ const JobCard = ({job} : {job: JobProps}) => {
                     <Typography variant="body2" color="text.secondary">
                         {job.attributes.city.data.attributes.name}, {job.attributes.locationName}
                     </Typography>
-                    <Rating
-                        sx={{mt: '10px'}}
-                        name="custom-rating"
-                        value={job.attributes.employer.data.attributes.rating}
-                        precision={0.1}
-                        readOnly
-                    />
+                    {   /*<Rating
+                            sx={{mt: '10px'}}
+                            name="custom-rating"
+                            value={job.attributes.employer.data.attributes.rating}
+                            precision={0.1}
+                            readOnly
+                        />*/}
                 </CardContent>
                 <CardActions>
                     <Typography variant="body2" sx={{ color: '#C40C0C', ml: '10px', width: '50%' }}>

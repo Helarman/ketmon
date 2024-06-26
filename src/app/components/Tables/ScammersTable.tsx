@@ -38,7 +38,6 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
             <TableCell>Мошенник</TableCell>
             <TableCell>Деятельность</TableCell>
             <TableCell>Город</TableCell>
-            <TableCell>Дата внесения</TableCell>
             <TableCell>Контакты</TableCell>
             <TableCell>Причина</TableCell>
             <TableCell>Ссылка на доказательства</TableCell>
@@ -56,7 +55,6 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
               <TableCell component="th" scope="row">{scammer.name}</TableCell>
               <TableCell>{scammer.type ? scammer.type : '-'}</TableCell>
               <TableCell>{scammer.city ? scammer.city : '-'}</TableCell>
-              <TableCell>{scammer.date ? scammer.date : '-'}</TableCell>
               <TableCell>{scammer.contacts ? scammer.contacts : '-'}</TableCell>
               <TableCell>{scammer.reason ? scammer.reason : '-'}</TableCell>
               <TableCell>

@@ -139,8 +139,8 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                    title={data.Header[2].Title}
                    subTitle={data.Header[2].subTitle}
                     buttons={[
-                        { label: 'Найти вещи', href: '/documents' },
-                        { label: 'Нашел вещи', href: '/documents' }]
+                        { label: 'Найти вещи', href: '/items' },
+                        { label: 'Нашел вещи', href: '/items' }]
                     }
                     image={data.Header[2].image.data.attributes.url}
                 />

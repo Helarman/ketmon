@@ -8,7 +8,7 @@ import { JobProps, UserProps } from "@/app/types";
 import { MapComponent } from "@/app/components/Map/Mapcomponent";
 import { useEffect, useState } from "react";
 
-const JobClient = ({ job, isAvailable, currentUser }: { job: JobProps, isAvailable: boolean, currentUser: UserProps }) => {
+const JobClient = ({ job, isAvailable, currentUser, rating }: { job: JobProps, isAvailable: boolean, currentUser: UserProps, rating: number | null }) => {
 
     const [hasMounted, setHasMounted] = useState(false);
     useEffect(() => {
@@ -51,7 +51,7 @@ const JobClient = ({ job, isAvailable, currentUser }: { job: JobProps, isAvailab
                         <InfoCard id={job.id} currentUser={currentUser} date={`${createdDate} в ${createdTime}`} title={job.attributes.name} price={job.attributes.price} sallary={sallary} adress={`${job.attributes.city.data.attributes.name},  ${job.attributes.locationName}`} isAvailable={isAvailable} contacts={job.attributes.contacts} isJob={true} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <EmployerCard name={job.attributes.employer.data.attributes.name} rating={job.attributes.employer.data.attributes.rating} description={job.attributes.employer.data.attributes.description} adress={job.attributes.employer.data.attributes.locationName} />
+                        <EmployerCard isJob name={job.attributes.employer.data.attributes.name} rating={rating} description={job.attributes.employer.data.attributes.description} adress={job.attributes.employer.data.attributes.locationName} id={job.attributes.employer.data.id} />
                     </Grid>
                     <Grid item xs={12}>
                         <JobDescription description={job.attributes.description} />

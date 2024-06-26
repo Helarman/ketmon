@@ -153,3 +153,14 @@ export interface WalletButtonProps {
         background: string;
     }
 }
+
+export interface ReviewProps {
+    id: number;
+    attributes: {
+        text: string;
+        rating: number;
+        createdAt: string;
+        users_permissions_user: { data: { attributes: { username: string; } } };
+        employer: EmployerProps
+    }
+}

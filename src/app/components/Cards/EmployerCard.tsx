@@ -7,17 +7,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Rating } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 interface EmployerCardProps {
+    id: number
     name: string;
-    rating?: number;
+    rating: number | null;
     description?: string;
     adress?: string;
+    isJob?: boolean;
 }
 ;
-const EmployerCard: React.FC<EmployerCardProps> = ({name, rating, description, adress}) => {
+const EmployerCard: React.FC<EmployerCardProps> = ({id, name, rating, description, adress, isJob}) => {
+    const router = useRouter()
     return (
-        <Card sx={{ height: '200px', pb: '10px' }}>
+        <Card onClick={() => router.push(isJob ? `/employers/${id}` : `/landlords/${id}` )} sx={{ cursor: 'pointer'   ,height: '200px', pb: '10px' }}>
             <CardContent>
                 <Typography gutterBottom variant="h4">
                     {name}

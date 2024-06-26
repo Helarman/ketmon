@@ -5,7 +5,7 @@ export const getCurrentUser = async () => {
     const { cookies } = await import("next/headers");
     const username = cookies().get("username")?.value;
     if (!username) {
-        return username;
+        return null;
     }
 
     try {

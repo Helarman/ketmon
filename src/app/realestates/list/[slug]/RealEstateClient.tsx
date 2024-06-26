@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import JobDescription from "@/app/components/Cards/JobDescription";
 
 
-const RealEstateClient = ({ realEstate, isAvailable, currentUser }: { realEstate: RealEstateProps, isAvailable: boolean, currentUser: UserProps }) => {
+const RealEstateClient = ({ realEstate, isAvailable, currentUser, rating }: { realEstate: RealEstateProps, isAvailable: boolean, currentUser: UserProps, rating: number | null }) => {
     const [hasMounted, setHasMounted] = useState(false);
     useEffect(() => {
         setHasMounted(true);
@@ -32,7 +32,7 @@ const RealEstateClient = ({ realEstate, isAvailable, currentUser }: { realEstate
                         <InfoCard id={realEstate.id} currentUser={currentUser} date={`${createdDate} в ${createdTime}`} title={`${realEstate.attributes.type}, ${realEstate.attributes.size}м², ${realEstate.attributes.rooms} к.`} price={realEstate.attributes.price} sallary={realEstate.attributes.perMonth} adress={`${realEstate.attributes.city.data.attributes.name},  ${realEstate.attributes.locationName}`} isAvailable={isAvailable} contacts={realEstate.attributes.contacts} isJob={false} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <EmployerCard name={realEstate.attributes.landlord.data.attributes.name} rating={realEstate.attributes.landlord.data.attributes.rating} description={realEstate.attributes.landlord.data.attributes.description} adress={realEstate.attributes.landlord.data.attributes.locationName} />
+                        <EmployerCard id={realEstate.attributes.landlord.data.id} name={realEstate.attributes.landlord.data.attributes.name} rating={rating} description={realEstate.attributes.landlord.data.attributes.description} adress={realEstate.attributes.landlord.data.attributes.locationName} />
                     </Grid>
                     <Grid item xs={12}>
                         <Gallery images={realEstate.attributes.images}/>
