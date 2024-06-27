@@ -1,19 +1,19 @@
 'use client'
 
 import { TextField, Autocomplete, Slider, Grid, Box, Button } from '@mui/material';
+import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { useState } from 'react';
-
-const ScammerSearch = ({ cities }: { cities: string[] }) => {
+const ItemsSearch = ({ cities }: { cities: string[] }) => {
+    const router = useRouter()
     const searchParams = useSearchParams()
-    const router = useRouter();
-    
-    const [name, setName] = useState<string | null>(searchParams.get('name'));
+
+    const [name, setName] = useState(searchParams.get('name'));
     const [type, setType] = useState<string | null>(searchParams.get('type'));
     const [city, setCity] = useState<string | null>(searchParams.get('city'));
 
-    const types = ['Работодатель', 'Арендодатель']; 
+    const types = ['Документ', 'Личная вещь', 'Человек'];
+
     let searchQuery = '';
 
     if (name) {
@@ -30,15 +30,16 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
 
     searchQuery = searchQuery.slice(0, -1)
 
+
     return (
         <Box sx={{ backgroundColor: '#e5e5e5', p: '20px', borderRadius: '10px' }}>
             <form>
-                <Grid container spacing={2} sx={{ display: 'flex', alignItems: 'center' }}>
+                <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
                     <Grid item xs={12} md={3}>
                         <TextField
                             variant="standard"
                             fullWidth
-                            label="Мошенник или компания"
+                            label="ФИО"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -49,12 +50,11 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
                             options={types}
                             value={type}
                             onChange={(event, newValue) => setType(newValue)}
-                            renderInput={(params) => <TextField {...params} variant="standard" label="Род деятельности" />}
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Документ" />}
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
                         <Autocomplete
-
                             fullWidth
                             options={cities}
                             value={city}
@@ -63,7 +63,7 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        <Button fullWidth variant="contained" color='error' onClick={() => router.push(`/scammers?${searchQuery}`)}>Поиск</Button>
+                        <Button fullWidth variant="contained" type="submit" color='error'  onClick={() => router.push(`/items?${searchQuery}`)}>Поиск</Button>
                     </Grid>
                 </Grid>
             </form>
@@ -71,4 +71,4 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
     );
 };
 
-export default ScammerSearch;
+export default ItemsSearch;

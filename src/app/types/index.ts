@@ -80,6 +80,11 @@ export interface ImageProps {
             name: string;
             alternativeText: string | null;
             url: string;
+            formats?:{
+                medium:{ url: string};
+                small:{ url: string};
+                large:{ url: string};
+            }
         }
     }
 }
@@ -162,5 +167,23 @@ export interface ReviewProps {
         createdAt: string;
         users_permissions_user: { data: { attributes: { username: string; } } };
         employer: EmployerProps
+    }
+}
+
+export interface ItemsProps {
+    id: number;
+    attributes: {
+        name: string;
+        type: string;
+        contacts: ContactsProps[];
+        city: {
+            data: {
+                id: number;
+                attributes: {
+                    name: string;
+                }
+            }
+        }
+        image: ImageProps
     }
 }
