@@ -1,6 +1,6 @@
 'use client'
 
-import { postReview } from "@/app/api/postReview";
+import { postEmployerReviews } from "@/app/api/postEmployerReviews";
 import { EmployerProps, ReviewProps } from "@/app/types";
 import { Box, Button, Card, CardActions, CardContent, Rating, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation"
@@ -22,7 +22,7 @@ const EmployerClient = ({ employer, reviews, isAilable, rating }: { employer: Em
             return null;
         }
 
-        await postReview({ text: text, rating: value, id: employer.id })
+        await postEmployerReviews({ text: text, rating: value, id: employer.id })
         toast.success('Отзыв успешно добавлен')
         window.location.reload();
     }
