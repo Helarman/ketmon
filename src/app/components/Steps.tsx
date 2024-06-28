@@ -24,25 +24,25 @@ interface StepsProps {
     step4: string
 }
 
-const Steps = ({ steps, title }: { steps: StepsProps, title: string }) => {
+const Steps = ({ steps, title, isItem }: { steps: StepsProps, title: string, isItem?: boolean }) => {
     return (
         <Box sx={{ mb: '100px' }}>
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500', mb: '30px' }}>
                 {title}
             </Typography>
-            <Grid container spacing={2} >
-                <Grid item xs={12} lg={3}>
+            <Grid container spacing={2} columns={isItem ? 3: 4}>
+                <Grid item xs={isItem ? 3: 4} lg={1}>
                     <Step num={1} text={steps.step1} />
                 </Grid>
-                <Grid item xs={12} lg={3}>
+                <Grid item xs={isItem ? 3: 4} lg={1}>
                     <Step num={2} text={steps.step2} />
                 </Grid>
-                <Grid item xs={12} lg={3}>
+                <Grid item xs={isItem ? 3: 4} lg={1}>
                     <Step num={3} text={steps.step3} />
                 </Grid>
-                <Grid item xs={12} lg={3}>
+                {isItem ? '': <Grid item xs={4} lg={1}>
                     <Step num={4} text={steps.step4} />
-                </Grid>
+                </Grid>}
             </Grid>
         </Box>
     );

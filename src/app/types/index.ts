@@ -175,6 +175,7 @@ export interface ItemsProps {
     attributes: {
         name: string;
         type: string;
+        price: number;
         contacts: ContactsProps[];
         city: {
             data: {

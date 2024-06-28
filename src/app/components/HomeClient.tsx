@@ -129,7 +129,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     }
                     image={data.Header[1].image.data.attributes.url}
                 />
-                <Steps steps={data.steps[1]} title={'Как начать поиск недвижимости?'} />
+                <Steps isItem steps={data.steps[1]} title={'Как начать поиск недвижимости?'} />
                 <RealEstateSearchSection image={data.realEstateSearch} cities={cities} />
                 <RecentRealEstate realEstates={data.RecetRealEstates}/>
             </TabConent>
@@ -144,7 +144,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     }
                     image={data.Header[2].image.data.attributes.url}
                 />
-                <Steps steps={data.steps[2]} title={'Как найти свои потеряные вещи?'} />
+                <Steps isItem steps={data.steps[2]} title={'Как найти свои потеряные вещи?'} />
             </TabConent>
 
 
