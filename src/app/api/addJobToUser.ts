@@ -6,7 +6,7 @@ export async function addJobToUser({ currentUser, id }: { currentUser: UserProps
 
     try {
         await axios.put(
-            `https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/users/${currentUser.id}?populate=jobs`,
+            `https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/users/${currentUser.id}?populate=jobs`,
             {
                 jobs: {
                     connect: [{ id: id }]

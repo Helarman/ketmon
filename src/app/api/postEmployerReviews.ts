@@ -9,11 +9,11 @@ export async function postEmployerReviews({ rating, text, id }: { rating: number
     }
 
     try {
-        const response = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/users?filters[username][$eq]=${username}`);
+        const response = await axios.get(`https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/users?filters[username][$eq]=${username}`);
         const currentUser = response.data[0];
 
         await axios.post(
-            `https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/reviews?populate=*`,
+            `https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/reviews?populate=*`,
             {
                 "data": {
                     publishedAt: null,

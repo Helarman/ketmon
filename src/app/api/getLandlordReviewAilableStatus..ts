@@ -23,7 +23,7 @@ export const fixTinaResults = <T>(data: T): T => {
 
 export default async function getLandlordReviewAilableStatus({ id }: { id: number }) {
     try {
-        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/reviews?filters[landlord][id][$eqi]=${id}&populate=users_permissions_user`);
+        const res = await axios.get(`https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/reviews?filters[landlord][id][$eqi]=${id}&populate=users_permissions_user`);
 
         const users = res.data.data.map((review: any) => review.attributes.users_permissions_user.data.attributes.username.toString())
        

@@ -6,7 +6,7 @@ export async function addItemToUser({ currentUser, id }: { currentUser: UserProp
 
     try {
         await axios.put(
-            `https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/users/${currentUser.id}?populate=items`,
+            `https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/users/${currentUser.id}?populate=items`,
             {
                 items: {
                     connect: [{ id: id }]

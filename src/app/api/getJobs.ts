@@ -29,7 +29,7 @@ export default async function getJobs({ searchParams }: { searchParams: any }) {
     }
 
     try {
-        const res = await axios.get(`https://excellent-dinosaur-a7b8ad2006.strapiapp.com/api/jobs?pagination[page]=${currentPage}&pagination[pageSize]=5&${searchQuery}populate=*`);
+        const res = await axios.get(`https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/jobs?pagination[page]=${currentPage}&pagination[pageSize]=5&${searchQuery}populate=*`);
         const jobs = res.data;
 
         if (!jobs) {
