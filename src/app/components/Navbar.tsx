@@ -100,8 +100,8 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page.label} href={page.href}>
-                                    <Typography textAlign="center">{page.label}</Typography>
+                                <MenuItem key={page.label} onClick={() => router.push(page.href)}>
+                                    <Button variant='text'onClick={() => router.push(page.href)} sx={{color: 'black'}}>{page.label}</Button>
                                 </MenuItem>
                             ))}
                         </Menu>
