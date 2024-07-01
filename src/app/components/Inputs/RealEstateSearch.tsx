@@ -38,7 +38,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
     return (
         <Box sx={{ backgroundColor: '#e5e5e5', p: '20px', borderRadius: '10px' }}>
             <form>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
                     <Grid item xs={12} >
                         <Autocomplete
                             value={city}
@@ -77,7 +77,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             onChange={(event: any, newValue: any) => {
                                 setRooms(newValue);
                             }}
-                            options={['1', '2', '3', '4', '5', 'Более']}
+                            options={['1', '2', '3', '4', '5']}
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
@@ -87,7 +87,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             }
                         />
                     </Grid>
-                    <Grid item xs={3}>
+                    {/* <Grid item xs={3}>
                         <TextField
                             value={minPrice}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,8 +112,8 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             variant="standard"
                             margin="normal"
                         />
-                    </Grid>
-                    <Grid item xs={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
+                    </Grid>*/}
+                    <Grid item xs={12} md={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
                         <Button color='error' variant='contained' sx={{ width: '100%' }} onClick={() => router.push(`/realestates/list?page=1${searchQuery}`)}>
                             Поиск
                         </Button>

@@ -13,19 +13,19 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
 
     let searchQuery = '';
 
-    if(name){
+    if (name) {
         searchQuery = searchQuery + `&name=${name}`
     }
-    
-    if(salary){
+
+    if (salary) {
         searchQuery = searchQuery + `&salary=${salary}`
     }
 
-    if(category){
+    if (category) {
         searchQuery = searchQuery + `&category=${category}`
     }
 
-    if(city){
+    if (city) {
         searchQuery = searchQuery + `&city=${city}`
     }
 
@@ -33,8 +33,8 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
     return (
         <Box sx={{ backgroundColor: '#e5e5e5', p: '20px', borderRadius: '10px' }}>
             <form>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
+                <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+                    {/* <Grid item xs={12}>
                         <TextField
                             value={name}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,14 +45,14 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             variant="standard"
                             margin="normal"
                         />
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12} >
                         <Autocomplete
                             options={categories}
                             value={category}
                             onChange={(event: any, newValue: any) => {
                                 setCategory(newValue);
-                              }}
+                            }}
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
@@ -68,7 +68,7 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             value={city}
                             onChange={(event: any, newValue: any) => {
                                 setCity(newValue);
-                              }}
+                            }}
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
@@ -78,7 +78,7 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             }
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    {/*<Grid item xs={6}>
                         <TextField
                             value={salary}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,9 +89,9 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             variant="standard"
                             margin="normal"
                         />
-                    </Grid>
-                    <Grid item xs={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
-                        <Button variant='contained' color='error' sx={{width: '100%'}} onClick={() => router.push(`/jobs/list?page=1${searchQuery}`)}>
+                    </Grid>*/}
+                    <Grid item xs={12} md={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
+                        <Button variant='contained' color='error' sx={{ width: '100%' }} onClick={() => router.push(`/jobs/list?page=1${searchQuery}`)}>
                             Поиск
                         </Button>
                     </Grid>
