@@ -20,7 +20,7 @@ const RealEstateCard = ({ realEstate }: { realEstate: RealEstateProps }) => {
                     component="img"
                     alt="Фото недвижимости"
                     height="200"
-                    image={`http://localhost:1337${realEstate.attributes.images.data[0].attributes.url}`}
+                    image={realEstate.attributes.images.data[0].attributes.url}
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
