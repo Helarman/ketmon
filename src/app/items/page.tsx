@@ -11,16 +11,17 @@ const ItemsPage = async ({ searchParams }: { searchParams: any }) => {
     const cities = await getCities()
     const items = await getItems({ searchParams })
     const currentUser = await getCurrentUser()
-    const avilableItemsIds = await getItemsByUser({ id: currentUser.id })
+    const avilableItemsIds = await getItemsByUser({ id: currentUser?.id })
 
+    
     return (
-        <>  
+        <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
                     Найденные вещи
                 </Typography>
                 <ItemsSearch cities={cities} />
-                <ItemsTable items={items} currentUser={currentUser} avilableItemsIds={avilableItemsIds}/>
+                <ItemsTable items={items} currentUser={currentUser} avilableItemsIds={avilableItemsIds} />
             </Box>
         </>
     )

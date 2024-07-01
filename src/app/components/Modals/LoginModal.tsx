@@ -39,8 +39,8 @@ const LoginModal = () => {
                 identifier: username,
                 password: password,
             });
-            Cookies.set('jwt', data.jwt, { sameSite: "None" });
-            Cookies.set('username', data.user.username, { sameSite: "None" });
+            Cookies.set('jwt', data.jwt, {expires: 30, sameSite: "Lax", secure: true });
+            Cookies.set('username', data.user.username, { expires: 30, sameSite: "Lax" , secure: true})
             toast.success('Вход выполнен!')
             loginModal.onClose();
             router.refresh()

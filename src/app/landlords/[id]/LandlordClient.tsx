@@ -1,13 +1,13 @@
 'use client'
 
 import { postLandlordReviews } from "@/app/api/postLandlordReviews";
-import { EmployerProps, ReviewProps } from "@/app/types";
+import { EmployerProps, ReviewProps, UserProps } from "@/app/types";
 import { Box, Button, Card, CardActions, CardContent, Rating, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation"
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const LandlordClient = ({ landlord, reviews, isAilable, rating }: { landlord: EmployerProps, reviews: ReviewProps[], isAilable: boolean | null, rating: number | null}) => {
+const LandlordClient = ({ currentUser,landlord, reviews, isAilable, rating }: {currentUser: UserProps, landlord: EmployerProps, reviews: ReviewProps[], isAilable: boolean | null, rating: number | null}) => {
     const router = useRouter()
     const [value, setValue] = useState<number | null>(0);
     const [text, setText] = useState<string | null>(null);
@@ -54,7 +54,7 @@ const LandlordClient = ({ landlord, reviews, isAilable, rating }: { landlord: Em
                 </CardActions>
             </Card>
 
-            {isAilable ? null : <Card sx={{ p: '10px', mb: '20px' }}>
+            {isAilable || !currentUser ? null : <Card sx={{ p: '10px', mb: '20px' }}>
                 <Typography gutterBottom variant="h4">
                     Оставьте отзыв и помогите другим
                 </Typography>

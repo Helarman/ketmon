@@ -91,35 +91,39 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
               <TableCell sx={{ width: '20%' }} component="th" scope="row">{item.attributes.name}</TableCell>
               <TableCell sx={{ width: '20%' }}>{item.attributes.type}</TableCell>
               <TableCell sx={{ width: '20%' }}>{item.attributes.city.data.attributes.name}</TableCell>
-              <TableCell sx={{ width: '20%' }}>
+              <TableCell sx={{ width: '20%' }}> 
                 <Zoom>
-                  <img src={item.attributes.image.data.attributes.formats?.medium.url} width="100px" height="100px" alt="" />
+                  <img src={item.attributes.image.data.attributes.url} width="100px" height="100px" alt="" />
                 </Zoom>
               </TableCell>
               <TableCell>
 
-
-                {avilableItemsIds.includes(item.id) ?
-                  item.attributes.contacts.map((contact) => (
-                    <Button sx={{ mr: '20px', color: 'black' }} key={contact.id} variant='text' startIcon={icons[contact.type]}>
-                      {contact.value}
-                    </Button>
-                  ))
+                {!currentUser ?
+                  <Button sx={{ mr: '20px', color: 'black' }} variant='text' onClick={() => loginModal.onOpen()}>
+                    Необходим вход
+                  </Button>
                   :
-                  <Box >
-                    {isOpen ?
-                      <Box >
-                        <ButtonGroup variant="contained" >
-                          <Button color='error' disabled>{item.attributes.price} ₽</Button>
-                          <Button color='error' onClick={() => buyContacts({ price: 100, id: item.id })}>Подтвердить</Button>
-                        </ButtonGroup>
-                      </Box>
-                      :
-                      <Button variant='contained' color='error' onClick={() => setIsOpen(true)}>
-                        Показать контакты
+                  avilableItemsIds.includes(item.id) ?
+                    item.attributes.contacts.map((contact) => (
+                      <Button sx={{ mr: '20px', color: 'black' }} key={contact.id} variant='text' startIcon={icons[contact.type]}>
+                        {contact.value}
                       </Button>
-                    }
-                  </Box>
+                    ))
+                    :
+                    <Box >
+                      {isOpen ?
+                        <Box >
+                          <ButtonGroup variant="contained" >
+                            <Button color='error' disabled>{item.attributes.price} ₽</Button>
+                            <Button color='error' onClick={() => buyContacts({ price: 100, id: item.id })}>Подтвердить</Button>
+                          </ButtonGroup>
+                        </Box>
+                        :
+                        <Button variant='contained' color='error' onClick={() => setIsOpen(true)}>
+                          Показать контакты
+                        </Button>
+                      }
+                    </Box>
                 }
               </TableCell>
             </TableRow>

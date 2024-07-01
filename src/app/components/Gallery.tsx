@@ -6,7 +6,7 @@ import { ImagesProps } from "../types";
 
 const Gallery = ({ images }: { images: ImagesProps }) => {
 
-    const imagesList = images.data.map((image) => ({ original: `http://localhost:1337${image.attributes.url}`, thumbnail: `http://localhost:1337${image.attributes.url}` }))
+    const imagesList = images.data.map((image) => ({ original: image.attributes.url, thumbnail: image.attributes.url} ))
 
     return (
         <Card >

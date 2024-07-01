@@ -17,6 +17,8 @@ export default async function getLandlordReviewAilableStatus({ id }: { id: numbe
            return null;
         }
 
+        if(!id) { return null;}
+
         return items;
 
     } catch (error: any) {
