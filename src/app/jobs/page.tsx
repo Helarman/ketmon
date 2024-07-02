@@ -17,14 +17,14 @@ const JobPage = async () => {
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Поиск вакансий
+                    Иш қидириш
                 </Typography>
                 <JobSearch cities={cities} categories={categories} />
             </Box>
             {
                 //<RecentJob />
             }
-            <Categories title={'Вакансии по специализации'} categories={categories} />
+            <Categories title={'Буш иш ўринлари'} categories={categories} />
 
         </>
     )

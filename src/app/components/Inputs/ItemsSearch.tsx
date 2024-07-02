@@ -12,7 +12,7 @@ const ItemsSearch = ({ cities }: { cities: string[] }) => {
     const [type, setType] = useState<string | null>(searchParams.get('type'));
     const [city, setCity] = useState<string | null>(searchParams.get('city'));
 
-    const types = ['Документ', 'Личная вещь', 'Человек'];
+    const types = ['Ҳужжатлар', 'Шахсий буюмлар ', 'Топилган '];
 
     let searchQuery = '';
 
@@ -21,7 +21,12 @@ const ItemsSearch = ({ cities }: { cities: string[] }) => {
     }
 
     if (type) {
-        searchQuery = searchQuery + `type=${type}&`
+        let ruType='';
+        if( type == 'Ҳужжатлар') { ruType = 'Документ'}
+        if( type == 'Шахсий буюмлар') { ruType = 'Личная вещь'}
+        if( type == 'Шахсий буюмлар') { ruType = 'Человек'}
+
+        searchQuery = searchQuery + `type=${ruType}&`
     }
 
     if (city) {
@@ -50,7 +55,7 @@ const ItemsSearch = ({ cities }: { cities: string[] }) => {
                             options={types}
                             value={type}
                             onChange={(event, newValue) => setType(newValue)}
-                            renderInput={(params) => <TextField {...params} variant="standard" label="Документ" />}
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Топилган " />}
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
@@ -59,11 +64,11 @@ const ItemsSearch = ({ cities }: { cities: string[] }) => {
                             options={cities}
                             value={city}
                             onChange={(event, newValue) => setCity(newValue)}
-                            renderInput={(params) => <TextField {...params} variant="standard" label="Город" />}
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Шаҳар ва вилоят" />}
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        <Button fullWidth variant="contained" type="submit" color='error'  onClick={() => router.push(`/items?${searchQuery}`)}>Поиск</Button>
+                        <Button fullWidth variant="contained" type="submit" color='error'  onClick={() => router.push(`/items?${searchQuery}`)}>ИЗЛАНГ</Button>
                     </Grid>
                 </Grid>
             </form>

@@ -6,25 +6,25 @@ import { Box, Button, CardActionArea, CardActions, Rating } from '@mui/material'
 import { JobProps } from '@/app/types';
 import { useRouter } from 'next/navigation';
 
-const JobCard = ({job} : {job: JobProps}) => {
+const JobCard = ({ job }: { job: JobProps }) => {
     const router = useRouter()
 
     let sallary = 'Доход не указан'
-    
-    if(job.attributes.minSalary < job.attributes.maxSalary){
+
+    if (job.attributes.minSalary < job.attributes.maxSalary) {
         sallary = `${job.attributes.minSalary}₽ - ${job.attributes.maxSalary}₽`
     }
 
-    if(job.attributes.minSalary > job.attributes.maxSalary){
+    if (job.attributes.minSalary > job.attributes.maxSalary) {
         sallary = `от ${job.attributes.minSalary}₽`
     }
 
-    if(job.attributes.minSalary == job.attributes.maxSalary){
+    if (job.attributes.minSalary == job.attributes.maxSalary) {
         sallary = `${job.attributes.minSalary}₽`
     }
 
     const createdDate = new Date(job.attributes.createdAt).toLocaleDateString()
-    const createdTime = new Date(job.attributes.createdAt).toLocaleTimeString().slice(0,-3)
+    const createdTime = new Date(job.attributes.createdAt).toLocaleTimeString().slice(0, -3)
     return (
         <Card onClick={() => router.push(`/jobs/list/${job.attributes.slug}`)}>
             <CardActionArea >
@@ -51,7 +51,7 @@ const JobCard = ({job} : {job: JobProps}) => {
                 </CardContent>
                 <CardActions>
                     <Typography variant="body2" sx={{ color: '#C40C0C', ml: '10px', width: '50%' }}>
-                        Откликнуться
+                        Батафсил маълумот
                     </Typography>
                 </CardActions>
 

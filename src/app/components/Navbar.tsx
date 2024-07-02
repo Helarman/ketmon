@@ -15,12 +15,12 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
     const router = useRouter();
 
     const pages = [
-        { label: 'Главная', href: '/' },
-        { label: 'Работа', href: '/jobs' },
-        { label: 'Недвижимость', href: '/realestates' },
-        { label: 'Найденные вещи', href: '/items' },
-        { label: 'Мошенники', href: '/scammers' },
-        { label: 'Помощь', href: '/faq' },
+        { label: 'БОШ САҲИФА', href: '/' },
+        { label: 'ВАКАНСИЯ', href: '/jobs' },
+        { label: 'КВАРТИРА', href: '/realestates' },
+        { label: 'ҲУЖЖАТЛАР', href: '/items' },
+        { label: 'ФИРИБГАРЛАР', href: '/scammers' },
+        { label: 'САВОЛЛАР', href: '/faq' },
     ];
 
 

@@ -38,7 +38,7 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
                         <TextField
                             variant="standard"
                             fullWidth
-                            label="Мошенник или компания"
+                            label="Фирибгарлик тури"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -49,7 +49,7 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
                             options={types}
                             value={type}
                             onChange={(event, newValue) => setType(newValue)}
-                            renderInput={(params) => <TextField {...params} variant="standard" label="Род деятельности" />}
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Фаолият тури" />}
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
@@ -59,11 +59,11 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
                             options={cities}
                             value={city}
                             onChange={(event, newValue) => setCity(newValue)}
-                            renderInput={(params) => <TextField {...params} variant="standard" label="Город" />}
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Шаҳар ва вилоят" />}
                         />
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        <Button fullWidth variant="contained" color='error' onClick={() => router.push(`/scammers?${searchQuery}`)}>Поиск</Button>
+                        <Button fullWidth variant="contained" color='error' onClick={() => router.push(`/scammers?${searchQuery}`)}>ИЗЛАНГ</Button>
                     </Grid>
                 </Grid>
             </form>

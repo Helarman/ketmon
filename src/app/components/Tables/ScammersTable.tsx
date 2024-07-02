@@ -35,12 +35,12 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Мошенник</TableCell>
-            <TableCell>Деятельность</TableCell>
-            <TableCell>Город</TableCell>
-            <TableCell>Контакты</TableCell>
-            <TableCell>Причина</TableCell>
-            <TableCell>Ссылка на доказательства</TableCell>
+            <TableCell>ФИРИБГАРЛАР</TableCell>
+            <TableCell>Фаолият</TableCell>
+            <TableCell>Шаҳар ва вилоят</TableCell>
+            <TableCell>Телефон рақами</TableCell>
+            <TableCell>Изоҳлари</TableCell>
+            <TableCell>Изоҳлари</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -71,7 +71,7 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
         </TableBody>
       </Table>
       <TablePagination
-        labelRowsPerPage="Строк на странице"
+        labelRowsPerPage="Саҳифалар"
         rowsPerPageOptions={[10, 50, 100]}
         component="div"
         count={scammers.length}

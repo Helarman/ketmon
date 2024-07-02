@@ -12,7 +12,7 @@ const JobPage = async ({ searchParams }: { searchParams: any }) => {
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Список мошенников
+                    ФИРИБГАРЛАР
                 </Typography>
                 <ScammerSearch cities={cities} />
                 <FraudTable scammers={scammers} />

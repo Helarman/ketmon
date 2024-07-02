@@ -73,7 +73,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
       if (isJob) {
         addJob()
       }
-      if (!isJob){
+      if (!isJob) {
         addRealEstate()
       }
     } catch (error: any) {
@@ -110,8 +110,8 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
           {adress}
         </Typography>
       </CardContent>
-      
-      
+
+
       <CardActions sx={{ ml: '10px' }}>
         {isAvailable ?
           contacts.map((contact) => (
@@ -131,7 +131,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
               </Box>
               :
               <Button variant='contained' color='error' onClick={() => setIsOpen(true)}>
-                Показать контакты
+                Батафсил маълумот
               </Button>
             }
           </Box>

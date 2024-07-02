@@ -13,12 +13,12 @@ const ItemsPage = async ({ searchParams }: { searchParams: any }) => {
     const currentUser = await getCurrentUser()
     const avilableItemsIds = await getItemsByUser({ id: currentUser?.id })
 
-    
+
     return (
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Найденные вещи
+                    УЙ-ЖОЙ ТОПИШ
                 </Typography>
                 <ItemsSearch cities={cities} />
                 <ItemsTable items={items} currentUser={currentUser} avilableItemsIds={avilableItemsIds} />

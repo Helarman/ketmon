@@ -36,6 +36,7 @@
     "react-redux": "^9.1.2",
     "react-responsive-carousel": "^3.2.23",
     "react-yandex-maps": "^4.6.0",
+    "yarn": "^1.22.22",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

@@ -49,7 +49,7 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Город"
+                            label="Шаҳар ва вилоят"
                             variant="standard"
                         />
                     }
@@ -60,11 +60,11 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     onChange={(event: any, newValue: any) => {
                         setType(newValue);
                     }}
-                    options={['Квартира', 'Комната', 'Дом']}
+                    options={['Квартира', 'Хона', 'Уй']}
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Тип недвижимости"
+                            label="Шаҳар ва вилоят"
                             variant="standard"
                         />
                     }
@@ -74,7 +74,7 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     onChange={(event: any, newValue: any) => {
                         setRooms(newValue);
                     }}
-                    options={['1', '2', '3', '4', '5', 'Более']}
+                    options={['1', '2', '3', '4', '5']}
                     renderInput={(params) =>
                         <TextField
                             {...params}
@@ -83,7 +83,7 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                         />
                     }
                 />
-                <TextField
+                {/*<TextField
                     value={minPrice}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setMinPrice(event.target.value);
@@ -104,10 +104,10 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     fullWidth
                     variant="standard"
                     margin="normal"
-                />
+                />*/}
                 <Box sx={{ mt: '20px', mb: '20px' }}>
                     <Button color='error' variant='contained' sx={{ width: '100%' }} onClick={() => router.push(`/realestates/list?page=1${searchQuery}`)}>
-                        Поиск
+                        ИЗЛАНГ
                     </Button>
                 </Box>
             </form>

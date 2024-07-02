@@ -56,7 +56,7 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="Специализация"
+                                    label="Буш иш ўринлари"
                                     variant="standard"
                                 />
                             }
@@ -72,7 +72,7 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="Город"
+                                    label="Шаҳар ва вилоят"
                                     variant="standard"
                                 />
                             }
@@ -92,7 +92,7 @@ const JobSearch = ({ cities, categories }: { cities: string[], categories: strin
                     </Grid>*/}
                     <Grid item xs={12} md={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
                         <Button variant='contained' color='error' sx={{ width: '100%' }} onClick={() => router.push(`/jobs/list?page=1${searchQuery}`)}>
-                            Поиск
+                            ИЗЛАНГ
                         </Button>
                     </Grid>
                 </Grid>

@@ -49,7 +49,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="Город"
+                                    label="Шаҳар ва вилоят"
                                     variant="standard"
                                 />
                             }
@@ -61,11 +61,11 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             onChange={(event: any, newValue: any) => {
                                 setType(newValue);
                             }}
-                            options={['Квартира', 'Комната', 'Дом']}
+                            options={['Квартира', 'Хона', 'Уй']}
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="Тип недвижимости"
+                                    label="ИЗЛАНГ"
                                     variant="standard"
                                 />
                             }
@@ -115,7 +115,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                     </Grid>*/}
                     <Grid item xs={12} md={6} sx={{ display: 'grid', alignItems: 'end', justifyItems: 'end' }}>
                         <Button color='error' variant='contained' sx={{ width: '100%' }} onClick={() => router.push(`/realestates/list?page=1${searchQuery}`)}>
-                            Поиск
+                            ИЗЛАНГ
                         </Button>
                     </Grid>
                 </Grid>

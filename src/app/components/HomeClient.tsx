@@ -99,9 +99,9 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                 centered
 
             >
-                <StyledTab label="Работа" />
-                <StyledTab label="недвижимость" />
-                <StyledTab label="документы" />
+                <StyledTab label="ВАКАНСИЯ" />
+                <StyledTab label="КВАРТИРА" />
+                <StyledTab label="ҲУЖЖАТЛАР" />
             </StyledTabs>
 
             <TabConent value={value} index={0}>
@@ -109,12 +109,12 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     title={data.Header[0].Title}
                     subTitle={data.Header[0].subTitle}
                     buttons={[
-                        { label: 'Найти работу', href: '/jobs' },
-                        { label: 'Размаестить вакансию', href: '/jobs' }]
+                        { label: 'ИШ ТОПИШ', href: '/jobs' },
+                        { label: 'РЕКЛАМА БЕРИШ', href: '/jobs' }]
                     }
                     image={data.Header[0].image.data.attributes.url}
                 />
-                <Steps steps={data.steps[0]} title={'Как начать искать работу?'} />
+                <Steps steps={data.steps[0]} title={'Сиз учун саҳифамиз қулайликлари?'} />
                 <JobSearchSection image={data.jobSearchImage} categories={categories} cities={cities} />
                 <RecentJob jobs={data.RecentJobs} />
             </TabConent>
@@ -124,12 +124,12 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     title={data.Header[1].Title}
                     subTitle={data.Header[1].subTitle}
                     buttons={[
-                        { label: 'Найти недвижимость!', href: '/real-estates' },
-                        { label: 'Разместить объявление', href: '/real-estates' }]
+                        { label: 'УЙ-ЖОЙ ТОПИШ', href: '/real-estates' },
+                        { label: 'РЕКЛАМА БЕРИШ', href: '/real-estates' }]
                     }
                     image={data.Header[1].image.data.attributes.url}
                 />
-                <Steps isItem steps={data.steps[1]} title={'Как начать поиск недвижимости?'} />
+                <Steps isItem steps={data.steps[1]} title={'Сиз учун саҳифамиз қулайликлари?'} />
                 <RealEstateSearchSection image={data.realEstateSearch} cities={cities} />
                 <RecentRealEstate realEstates={data.RecetRealEstates}/>
             </TabConent>
@@ -139,12 +139,12 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                    title={data.Header[2].Title}
                    subTitle={data.Header[2].subTitle}
                     buttons={[
-                        { label: 'Найти вещи', href: '/items' },
-                        { label: 'Нашел вещи', href: '/items' }]
+                        { label: 'ҲУЖЖАТЛАР', href: '/items' },
+                        { label: 'ТОПИБ ОЛДИМ', href: '/items' }]
                     }
                     image={data.Header[2].image.data.attributes.url}
                 />
-                <Steps isItem steps={data.steps[2]} title={'Как найти свои потеряные вещи?'} />
+                <Steps isItem steps={data.steps[2]} title={'Йўқолган ҳужжатни қандай топсам бўлади?'} />
             </TabConent>
 
 

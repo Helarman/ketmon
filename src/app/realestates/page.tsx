@@ -11,16 +11,16 @@ import getCities from "../api/getCities";
 const RealEstatePage = async () => {
     const data = await getHomePageData();
     const cities = await getCities()
-    
+
     return (
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Поиск недвижимости
+                    Батафсил маълумот
                 </Typography>
                 <RealEstateSearch cities={cities} />
             </Box>
-            <Categories title={'Объявления по регионам'} categories={cities} isRealEstate/>
+            <Categories title={'Батафсил маълумот'} categories={cities} isRealEstate />
         </>
     )
 };

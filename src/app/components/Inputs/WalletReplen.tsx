@@ -10,7 +10,7 @@ import { styled } from '@mui/system';
 import { useRouter } from 'next/navigation';
 import { WalletButtonProps } from '@/app/types';
 
-const steps = ['Переведите деньги', 'Напишите о переводе', 'Пополнение выполнено'];
+const steps = ['Пул ўтказинг', 'Чекни Вотсапдан жунатинг', 'Хисобингиз тўлди'];
 
 const CustomButton = styled(Button)(({ bgcolor, textcolor, element, href, target }: { bgcolor: string, textcolor: string, element: string, href: string, target: string }) => ({
     display: 'flex',
@@ -93,7 +93,7 @@ const ThirdStep = () => {
     return (
         <Box sx={{ py: '20px', textAlign: 'center' }}>
             <Typography variant='h4'>
-                Готово! Ожидайте зачисление!
+                Рахмат! Бир оздан сунг, хисобингиз тўлади!
             </Typography>
         </Box>
     )
@@ -149,11 +149,11 @@ const WalletReplen = ({ banks, contacts }: { banks: WalletButtonProps[], contact
                         onClick={handleBack}
                         sx={{ mr: 1 }}
                     >
-                        Назад
+                        ОРҚАГА
                     </Button>
                     <Box sx={{ flex: '1 1 auto' }} />
                     <Button variant='contained' color='error' onClick={handleNext}>
-                        {activeStep === 2 ? 'Закончить' : 'Далее'}
+                        {activeStep === 2 ? 'ТАСДИҚЛАНГ' : 'ОЛДИНГА'}
                     </Button>
                 </CardActions>
             </CardContent>

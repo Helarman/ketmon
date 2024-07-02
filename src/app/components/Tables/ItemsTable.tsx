@@ -75,10 +75,10 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
         <TableHead>
           <TableRow>
             <TableCell>ФИО</TableCell>
-            <TableCell>Тип документа</TableCell>
-            <TableCell>Город</TableCell>
-            <TableCell>Фотографии</TableCell>
-            <TableCell>Контакты</TableCell>
+            <TableCell>Топилган</TableCell>
+            <TableCell>Шаҳар ва вилоят</TableCell>
+            <TableCell>Фото</TableCell>
+            <TableCell>Телефон рақами</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -91,7 +91,7 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
               <TableCell sx={{ width: '20%' }} component="th" scope="row">{item.attributes.name}</TableCell>
               <TableCell sx={{ width: '20%' }}>{item.attributes.type}</TableCell>
               <TableCell sx={{ width: '20%' }}>{item.attributes.city.data.attributes.name}</TableCell>
-              <TableCell sx={{ width: '20%' }}> 
+              <TableCell sx={{ width: '20%' }}>
                 <Zoom>
                   <img src={item.attributes.image.data.attributes.url} width="100px" height="100px" alt="" />
                 </Zoom>
@@ -120,7 +120,7 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
                         </Box>
                         :
                         <Button variant='contained' color='error' onClick={() => setIsOpen(true)}>
-                          Показать контакты
+                          ТЎЛИҚ МАЪЛУМОТ
                         </Button>
                       }
                     </Box>
@@ -131,7 +131,7 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
         </TableBody>
       </Table >
       <TablePagination
-        labelRowsPerPage="Строк на странице"
+        labelRowsPerPage="Саҳифалар"
         rowsPerPageOptions={[10, 50, 100]}
         component="div"
         count={items.length}

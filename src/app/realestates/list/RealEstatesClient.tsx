@@ -26,7 +26,7 @@ const RealEstateClient = ({ cities, realEstates, pagination }: { cities: string[
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Список объявлений
+                    Батафсил маълумот
                 </Typography>
                 <RealEstateDisplaySetting />
                 <Grid container>
@@ -47,7 +47,7 @@ const RealEstateClient = ({ cities, realEstates, pagination }: { cities: string[
                                 </Typography>
                             }
                         </Grid>
-                        
+
                         {pagination.pageCount > 1 ?
                             < Box
                                 sx={{ mt: '20px' }}

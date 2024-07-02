@@ -8,7 +8,7 @@ export const RecentJob = ({ jobs }: { jobs: { job: { data: JobProps } }[] }) => 
     return (
         <Box sx={{ mb: '70px' }}>
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500', mb: '30px' }}>
-                Свежие вакансии
+                Иш қидириш
             </Typography>
             <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
                 {jobs.map((job) => (

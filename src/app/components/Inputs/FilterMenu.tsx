@@ -35,7 +35,7 @@ const FilteringMenu = ({ cities, categories }: { cities: string[], categories: s
     return (
         <Box sx={{ mr: '40px' }}>
             <form>
-                <TextField
+                {/*<TextField
                     value={name}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setName(event.target.value);
@@ -45,7 +45,7 @@ const FilteringMenu = ({ cities, categories }: { cities: string[], categories: s
                     fullWidth
                     variant="standard"
                     margin="normal"
-                />
+                />*/}
                 <Autocomplete
                     value={category}
                     onChange={(event: any, newValue: any) => {
@@ -56,7 +56,7 @@ const FilteringMenu = ({ cities, categories }: { cities: string[], categories: s
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Специализация"
+                            label="Иш қидириш"
                             variant="standard"
                         />
                     }
@@ -71,13 +71,13 @@ const FilteringMenu = ({ cities, categories }: { cities: string[], categories: s
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Город"
+                            label="Иш қидириш"
                             variant="standard"
                         />
                     }
                 />
 
-                <TextField
+                {/*<TextField
                     value={salary}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setSalary(event.target.value);
@@ -87,10 +87,10 @@ const FilteringMenu = ({ cities, categories }: { cities: string[], categories: s
                     fullWidth
                     variant="standard"
                     margin="normal"
-                />
+                />*/}
                 <Box sx={{ mt: '20px', mb: '20px' }}>
-                    <Button variant='contained' sx={{width: '100%'}} color='error' onClick={() => router.push(`/jobs/list?page=1${searchQuery}`)}>
-                        Поиск
+                    <Button variant='contained' sx={{ width: '100%' }} color='error' onClick={() => router.push(`/jobs/list?page=1${searchQuery}`)}>
+                        ИЗЛАНГ
                     </Button>
                 </Box>
             </form>
