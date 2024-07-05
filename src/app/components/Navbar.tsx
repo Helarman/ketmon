@@ -101,23 +101,23 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.label} onClick={() => router.push(page.href)}>
-                                    <Button variant='text'onClick={() => router.push(page.href)} sx={{color: 'black'}}>{page.label}</Button>
+                                    <Button variant='text' onClick={() => router.push(page.href)} sx={{ color: 'black' }}>{page.label}</Button>
                                 </MenuItem>
                             ))}
                         </Menu>
 
-                        {/*isScrolled ?
-                            <img src="logo.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
+                        {isScrolled ?
+                            <img src="https://dazzling-symphony-5fc97c5a00.media.strapiapp.com/logo_de5e3d5f8b.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
                             :
-                            <img src="logo2.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
-                        */}
+                            <img src="https://dazzling-symphony-5fc97c5a00.media.strapiapp.com/logo2_37ee4316dc.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
+                        }
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        {/*isScrolled ?
-                            <img src="logo.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
+                        {isScrolled ?
+                            <img src="https://dazzling-symphony-5fc97c5a00.media.strapiapp.com/logo_de5e3d5f8b.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
                             :
-                            <img src="logo2.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
-                        */}
+                            <img src="https://dazzling-symphony-5fc97c5a00.media.strapiapp.com/logo2_37ee4316dc.png" style={{ height: '2rem', marginRight: '1rem' }} alt="" />
+                        }
 
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

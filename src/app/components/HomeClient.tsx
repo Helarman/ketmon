@@ -110,7 +110,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     subTitle={data.Header[0].subTitle}
                     buttons={[
                         { label: 'ИШ ТОПИШ', href: '/jobs' },
-                        { label: 'РЕКЛАМА БЕРИШ', href: '/jobs' }]
+                        { label: 'РЕКЛАМА БЕРИШ', href: 'https://wa.me/79107093030' }]
                     }
                     image={data.Header[0].image.data.attributes.url}
                 />
@@ -125,7 +125,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                     subTitle={data.Header[1].subTitle}
                     buttons={[
                         { label: 'УЙ-ЖОЙ ТОПИШ', href: '/real-estates' },
-                        { label: 'РЕКЛАМА БЕРИШ', href: '/real-estates' }]
+                        { label: 'РЕКЛАМА БЕРИШ', href: 'https://wa.me/79107093030' }]
                     }
                     image={data.Header[1].image.data.attributes.url}
                 />
@@ -140,7 +140,7 @@ const HomeClient = ({ data, cities, categories }: { data: any, cities: string[],
                    subTitle={data.Header[2].subTitle}
                     buttons={[
                         { label: 'ҲУЖЖАТЛАР', href: '/items' },
-                        { label: 'ТОПИБ ОЛДИМ', href: '/items' }]
+                        { label: 'ТОПИБ ОЛДИМ', href: 'https://wa.me/79107093030' }]
                     }
                     image={data.Header[2].image.data.attributes.url}
                 />

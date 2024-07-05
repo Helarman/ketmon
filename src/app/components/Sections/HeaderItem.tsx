@@ -24,8 +24,8 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
     return (
         <Box sx={{ mb: '70px', display: 'flex', alignItems: 'center' }}>
             <Grid container spacing={3} alignItems="center">
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="h2" gutterBottom>
+                <Grid item xs={12} md={6}>
+                    <Typography sx={{fontWeight: '700', fontSize: {xs: '2rem', sm: '4rem'}}} gutterBottom>
                         {title}
                     </Typography>
                     <Typography variant="inherit" paragraph>
@@ -38,7 +38,7 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
                             </Button>
                         </Box>
                         <Box>
-                            <Button color='error' onClick={() => router.push(buttons[1].href)} variant="text" disabled>
+                            <Button color='error' href={buttons[1].href} component='a' variant="text">
                                 {buttons[1].label}
                             </Button>
                         </Box>
