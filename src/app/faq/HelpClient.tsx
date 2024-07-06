@@ -7,13 +7,13 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from "react";
-
+import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
 interface AnswerProps {
     id: number;
     attributes: {
         question: string;
-        answer: string;
+        content: BlocksContent;
     }
 }
 
@@ -48,9 +48,7 @@ const HelpClient = ({ data }: { data: AnswerProps[] }) => {
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Typography>
-                                    {question.attributes.answer}
-                                </Typography>
+                                <BlocksRenderer content={question.attributes.content} />
                             </AccordionDetails>
                         </Accordion>
                     ))}

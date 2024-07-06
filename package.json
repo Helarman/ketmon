@@ -16,6 +16,7 @@
     "@mui/styles": "^5.15.19",
     "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^2.2.5",
+    "@strapi/blocks-react-renderer": "^1.0.1",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "crypt": "^0.0.2",
