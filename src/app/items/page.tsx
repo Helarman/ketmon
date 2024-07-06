@@ -18,7 +18,7 @@ const ItemsPage = async ({ searchParams }: { searchParams: any }) => {
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    УЙ-ЖОЙ ТОПИШ
+                    ҲУЖЖАТЛАР
                 </Typography>
                 <ItemsSearch cities={cities} />
                 <ItemsTable items={items} currentUser={currentUser} avilableItemsIds={avilableItemsIds} />

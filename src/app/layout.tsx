@@ -33,6 +33,7 @@ const RootLayout = async ({
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
+          overflowX: 'hidden',
         }}
       >
         <div style={{ flexGrow: 1 }}>

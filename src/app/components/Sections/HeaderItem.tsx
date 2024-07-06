@@ -25,8 +25,8 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
         <Box sx={{ mb: '70px', display: 'flex', alignItems: 'center' }}>
             <Grid container spacing={3} alignItems="center">
                 <Grid item xs={12} md={6}>
-                    <Typography sx={{fontWeight: '700', fontSize: {xs: '2rem', sm: '4rem'}}} gutterBottom>
-                        {title}
+                    <Typography sx={{ fontWeight: '700', fontSize: { xs: '2rem', sm: '4rem' } }} gutterBottom>
+                        <span dangerouslySetInnerHTML={{ __html: title }} />
                     </Typography>
                     <Typography variant="inherit" paragraph>
                         {subTitle}
@@ -44,8 +44,8 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={6} sx={{height: {xs: '', md: '30rem'}, display: 'flex'}}>
-                    <img src={image} alt={title} style={{ width: '100%', borderRadius: '8px'}} />
+                <Grid item xs={12} sm={6} sx={{ height: { xs: '', md: '30rem' }, display: 'flex' }}>
+                    <img src={image} alt={title} style={{ width: '100%', borderRadius: '8px' }} />
                 </Grid>
             </Grid>
         </Box >
