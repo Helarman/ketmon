@@ -6,7 +6,7 @@ export async function addRealEstateToUser({ currentUser, id }: { currentUser: Us
 
     try {
         await axios.put(
-            `https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/users/${currentUser.id}?populate=real_estates`,
+            `https://committed-life-48566f99cd.strapiapp.com/api/users/${currentUser.id}?populate=real_estates`,
             {
                 real_estates: {
                     connect: [{ id: id }]

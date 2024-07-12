@@ -18,7 +18,7 @@ export default async function getItems({ searchParams }: { searchParams: any }) 
     }
 
     try {
-        const res = await axios.get(`https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/items?${searchQuery}populate=*`);
+        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/items?${searchQuery}populate=*`);
 
         const data = res.data.data
         if (!data) {

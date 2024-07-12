@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
 
 export default async function getLandlordReviewAilableStatus({ id }: { id: number }) {
     try {
-        const res = await axios.get(`https://dazzling-symphony-5fc97c5a00.strapiapp.com/api/users/${id}?populate=*`);
+        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/users/${id}?populate=*`);
 
         const items = res.data.items.map((item: any) => item.id);
        
