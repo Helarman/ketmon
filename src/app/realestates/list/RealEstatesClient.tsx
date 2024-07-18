@@ -26,7 +26,7 @@ const RealEstateClient = ({ cities, realEstates, pagination }: { cities: string[
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Батафсил маълумот
+                    Шаҳар ва вилоят
                 </Typography>
                 <RealEstateDisplaySetting />
                 <Grid container>
@@ -43,7 +43,7 @@ const RealEstateClient = ({ cities, realEstates, pagination }: { cities: string[
                                 ))
                                 :
                                 <Typography variant="h3">
-                                    Ничего не найдено
+                                   Ҳеч нарса топилмади
                                 </Typography>
                             }
                         </Grid>

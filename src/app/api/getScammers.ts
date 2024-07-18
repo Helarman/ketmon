@@ -22,8 +22,8 @@ export default async function getScammers({ searchParams }: { searchParams: any 
         const landlordsScammers = res2.data.data.map((landlord: any) => ({ name: landlord.attributes.name, type: 'Арендодатель', city: landlord.attributes.city.data.attributes.name, date: landlord.attributes.scammerDate, contacts: landlord.attributes.scammerContacts, reason: landlord.attributes.scammerReason, proof: landlord.attributes.scammerProofs }));
 
         const exports: { [key: string]: any } = {
-            'Работодатель': employerScammers,
-            'Арендодатель': landlordsScammers
+            'Иш берувчи': employerScammers,
+            'Кв берувчи': landlordsScammers
         }
 
         const scammers =  searchParams.type ? exports[searchParams.type] : employerScammers.concat(landlordsScammers)

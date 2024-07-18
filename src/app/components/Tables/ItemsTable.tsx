@@ -90,7 +90,7 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
             <TableRow key={item.id}>
               <TableCell sx={{ width: '20%' }} component="th" scope="row">{item.attributes.name}</TableCell>
               <TableCell sx={{ width: '20%' }}>{item.attributes.type}</TableCell>
-              <TableCell sx={{ width: '20%' }}>{item.attributes.city.data.attributes.name}</TableCell>
+              <TableCell sx={{ width: '20%' }}> {item.attributes.city.data ? item.attributes.city.data.attributes.name : 'Не укзан'}</TableCell>
               <TableCell sx={{ width: '20%' }}>
                 <Zoom>
                   <img src={item.attributes.image.data.attributes.url} width="100px" height="100px" alt="" />
@@ -115,7 +115,7 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
                         <Box >
                           <ButtonGroup variant="contained" >
                             <Button color='error' disabled>{item.attributes.price} ₽</Button>
-                            <Button color='error' onClick={() => buyContacts({ price: 100, id: item.id })}>Подтвердить</Button>
+                            <Button color='error' onClick={() => buyContacts({ price: 100, id: item.id })}>ТАСДИҚЛАНГ</Button>
                           </ButtonGroup>
                         </Box>
                         :

@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Uchar Ketmon",
-  description: "Uchar Ketmon - поиск работы, недвижеммости, потерянных вещей",
+  description: "Uchar Ketmon - Бўш ИШ ўринлар, Квартиралар, Ҳужжатлар, Фирибгарлар руйхати",
 };
 
 

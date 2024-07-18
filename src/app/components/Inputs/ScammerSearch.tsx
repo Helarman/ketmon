@@ -13,7 +13,7 @@ const ScammerSearch = ({ cities }: { cities: string[] }) => {
     const [type, setType] = useState<string | null>(searchParams.get('type'));
     const [city, setCity] = useState<string | null>(searchParams.get('city'));
 
-    const types = ['Работодатель', 'Арендодатель']; 
+    const types = [' Иш берувчи', 'Кв берувчи']; 
     let searchQuery = '';
 
     if (name) {

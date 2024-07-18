@@ -168,14 +168,11 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                                <MenuItem disabled onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">Профиль</Typography>
-                                </MenuItem>
                                 <MenuItem onClick={() => router.push('/wallet')}>
-                                    <Typography textAlign="center">Пополнить</Typography>
+                                    <Typography textAlign="center">Тўлдириш</Typography>
                                 </MenuItem>
                                 <MenuItem onClick={signout}>
-                                    <Typography textAlign="center">Выйти</Typography>
+                                    <Typography textAlign="center">Чиқиш</Typography>
                                 </MenuItem>
                             </Menu>
                         </Box>
@@ -186,7 +183,7 @@ const Navbar = ({ currentUser }: { currentUser: UserProps }) => {
                                 variant="text"
                                 onClick={loginModal.onOpen}
                             >
-                                Вход
+                                Кириш
                             </Button>
                             <Button
                                 style={{ color: isScrolled ? 'white' : 'black', transition: 'color 0.3s' }}

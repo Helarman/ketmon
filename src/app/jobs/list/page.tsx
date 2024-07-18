@@ -14,16 +14,16 @@ const JobListPage = async ({ searchParams }: { searchParams: any }) => {
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Список вакансий
+                    Вакансия Рўйхати
                 </Typography>
                 {jobs ?
                     <JobsClient jobs={jobs.data} pagination={jobs.meta.pagination} cities={cities} categories={categories} />
                     :
                     <>
                         <Typography variant="h4">
-                            Ничего не найдено
+                            Ҳеч нарса топилмади
                         </Typography>
-                        <Button variant='contained' sx={{mt: '10px'}} component='a'  color='error' href="/jobs/list">
+                        <Button variant='contained' sx={{ mt: '10px' }} component='a' color='error' href="/jobs/list">
                             Сброс
                         </Button>
                     </>

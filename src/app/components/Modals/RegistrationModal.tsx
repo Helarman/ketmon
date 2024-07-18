@@ -145,7 +145,7 @@ const RegistrationModal = () => {
                             }}
                             disabled={loading}
                         >
-                            {loading ? 'Loading...' : 'Зарегистрироваться'}
+                            {loading ? 'Loading...' : 'РЎЙХАТДАН ЎТИШ'}
                         </Button>
                         <Typography variant="body2" sx={{ mt: 2, textAlign: 'center' }}>
                             Уже зарегистрированы?{' '}
@@ -159,7 +159,7 @@ const RegistrationModal = () => {
                                     color: 'error.main'
                                 }
                             }}>
-                                Вход
+                                Кириш
                             </Typography>
                         </Typography>
                     </Box>

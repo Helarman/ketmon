@@ -16,11 +16,11 @@ const RealEstatePage = async () => {
         <>
             <Box sx={{ mb: '70px' }}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                    Батафсил маълумот
+                    Уй-жой қидириш
                 </Typography>
                 <RealEstateSearch cities={cities} />
             </Box>
-            <Categories title={'Батафсил маълумот'} categories={cities} isRealEstate />
+            <Categories title={'Шаҳар ва вилоят'} categories={cities} isRealEstate />
         </>
     )
 };

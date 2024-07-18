@@ -9,7 +9,7 @@ const JobSearchSection = ({ cities, categories, image }: { cities: string[], cat
     return (
         <Box sx={{ mb: '70px' }}>
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500' }}>
-                Иш қидириш
+                Топ 5 иш ўринлари
             </Typography>
             <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
                 <Grid item xs={12} lg={6} order={isSmallScreen ? 2 : 1}>

@@ -65,7 +65,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="ИЗЛАНГ"
+                                    label="Уй-жой турлари"
                                     variant="standard"
                                 />
                             }
@@ -81,7 +81,7 @@ const RealEstateSearch = ({ cities }: { cities: string[] }) => {
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
-                                    label="Колиичество комнат"
+                                    label="Хоналар сони"
                                     variant="standard"
                                 />
                             }

@@ -8,7 +8,7 @@ export const RecentRealEstate = ({ realEstates }: { realEstates: { realEstate: {
     return (
         <Box sx={{ mb: '70px' }}>
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500', mb: '30px' }}>
-                Свежие объявления
+                Топ 5 Уй-жойлари
             </Typography>
             <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
 

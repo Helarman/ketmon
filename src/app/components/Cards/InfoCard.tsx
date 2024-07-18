@@ -125,7 +125,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, date, title, price, adress, con
               <Box >
                 <ButtonGroup variant="contained">
                   <Button color='error' disabled>{price}₽</Button>
-                  <Button color='error' onClick={buyContacts}>Подтвердить</Button>
+                  <Button color='error' onClick={buyContacts}>ТАСДИҚЛАНГ</Button>
                   <Button color='inherit' onClick={() => setIsOpen(false)}>Отмена</Button>
                 </ButtonGroup>
               </Box>

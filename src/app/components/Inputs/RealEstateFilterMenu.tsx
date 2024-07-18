@@ -64,7 +64,7 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Шаҳар ва вилоят"
+                            label="Уй-жой турлари"
                             variant="standard"
                         />
                     }
@@ -78,7 +78,7 @@ const FilteringMenu = ({ cities }: { cities: string[] }) => {
                     renderInput={(params) =>
                         <TextField
                             {...params}
-                            label="Колиичество комнат"
+                            label="Хоналар сони"
                             variant="standard"
                         />
                     }

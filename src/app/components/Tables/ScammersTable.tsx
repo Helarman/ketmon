@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination, Typography } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination, Typography, Button } from '@mui/material';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 
@@ -28,7 +28,15 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
     setPage(0);
   };
   if (!scammers) {
-    return <Typography sx={{ mt: '30px' }}>Ничего не найдено</Typography>
+    return (
+      <>
+        <Typography sx={{ mt: '30px' }}>Ничего не найдено</Typography>
+
+        <Button sx={{mt: '10px'}} color='error' href="https://wa.me/79107093030" component='a' variant="text">
+          ЗАЯВКА
+        </Button>
+      </>
+    )
   }
   return (
     <TableContainer component={Paper} sx={{ mt: '30px' }}>
@@ -40,7 +48,7 @@ const FraudTable = ({ scammers }: { scammers: ScammerProps[] }) => {
             <TableCell>Шаҳар ва вилоят</TableCell>
             <TableCell>Телефон рақами</TableCell>
             <TableCell>Изоҳлари</TableCell>
-            <TableCell>Изоҳлари</TableCell>
+            <TableCell>Исбот маълумоти</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

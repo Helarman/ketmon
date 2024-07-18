@@ -27,7 +27,7 @@ const JobDisplaySetting = () => {
 
     return (
         <Box width={'100%'} sx={{ mb: '20px' }}>
-            <Box sx={{ py: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            {/* <Box sx={{ py: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Button
                     disabled
                     id="basic-button"
@@ -69,7 +69,7 @@ const JobDisplaySetting = () => {
                         <ViewModule />
                     </ToggleButton>
                 </ToggleButtonGroup>
-            </Box>
+            </Box>*/}
             <Divider />
         </Box >
     )

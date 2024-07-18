@@ -39,8 +39,8 @@ const LoginModal = () => {
                 identifier: username,
                 password: password,
             });
-            Cookies.set('jwt', data.jwt, {expires: 30, sameSite: "Lax", secure: true });
-            Cookies.set('username', data.user.username, { expires: 30, sameSite: "Lax" , secure: true})
+            Cookies.set('jwt', data.jwt, { expires: 30, sameSite: "Lax", secure: true });
+            Cookies.set('username', data.user.username, { expires: 30, sameSite: "Lax", secure: true })
             toast.success('Вход выполнен!')
             loginModal.onClose();
             router.refresh()
@@ -59,7 +59,7 @@ const LoginModal = () => {
     return (
         <ModalWindow isOpen={loginModal.isOpen} title="Вход" onClose={loginModal.onClose}>
             <Typography>
-            {process.env.API_URL}
+                {process.env.API_URL}
                 <Box
                     sx={{
                         mt: 8,
@@ -112,10 +112,10 @@ const LoginModal = () => {
                             }}
                             disabled={loading}
                         >
-                            {loading ? 'Loading...' : 'Войти'}
+                            {loading ? 'Loading...' : 'Кириш'}
                         </Button>
                         <Typography variant="body2" sx={{ mt: 2, textAlign: 'center' }}>
-                            Не зарегистрированы?{' '}
+                            Рўйхатдан ўтмаганмисиз?{' '}
                             <Typography component='button' variant='body2' onClick={onToggle} sx={{
                                 mb: 2,
                                 border: 'none',

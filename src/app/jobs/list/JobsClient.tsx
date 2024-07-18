@@ -3,7 +3,7 @@ import FilteringMenu from "@/app/components/Inputs/FilterMenu";
 import JobCard from "@/app/components/Cards/JobCard";
 import JobDisplaySettings from "@/app/components/Inputs/JobDisplaySetting";
 import { JobProps, PaginationProps } from "@/app/types";
-import { Box, Container, Fab, Grid, Pagination, Typography } from "@mui/material"
+import { Box, Button, Container, Fab, Grid, Pagination, Typography } from "@mui/material"
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -38,14 +38,19 @@ const JobsClient = ({ jobs, pagination, categories, cities }: { jobs: JobProps[]
                             </Box>
                         ))
                         :
-                        <Typography variant="h3">
-                            Ничего не найдено
-                        </Typography>
+                        <>
+                            <Typography variant="h3">
+                                Ҳеч нарса топилмади
+                            </Typography>
+                            <Button color='error' href="https://wa.me/79107093030" component='a' variant="text">
+                                РЕКЛАМА БЕРИШ
+                            </Button>
+                        </>
                     }
 
                     {pagination.pageCount > 1 ?
                         < Box
-                            sx={{mt: '20px'}}
+                            sx={{ mt: '20px' }}
                             display="flex"
                             justifyContent="center"
                             alignItems="center"
