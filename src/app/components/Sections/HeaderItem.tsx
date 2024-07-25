@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { Box, Button, Container, Grid, Typography } from "@mui/material"
 import { FixedArray } from "@/app/types";
+import { Telegram } from "@mui/icons-material";
 
 type ButtonProps = {
     label: string,
@@ -37,9 +38,21 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
                                 {buttons[0].label}
                             </Button>
                         </Box>
-                        <Box>
-                            <Button color='error' href={buttons[1].href} component='a' variant="text">
+                        <Box sx={{ mr: '10px' }}>
+                            <Button color='error' href={buttons[1].href} component='a' variant='outlined'>
                                 {buttons[1].label}
+                            </Button>
+                        </Box>
+                        <Box sx={{ mr: '10px' }}>
+                            <Button style={{
+                                backgroundColor: "#24A1DE",
+                            }}
+                                href='https://t.me/hurmacha1'
+                                component='a'
+                                variant='contained'
+                            >
+                                <Telegram sx={{mr: '2px', color: '#ffffff' }} />
+                                Telegram
                             </Button>
                         </Box>
                     </Box>
