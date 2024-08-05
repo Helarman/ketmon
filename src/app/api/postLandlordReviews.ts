@@ -9,11 +9,11 @@ export async function postLandlordReviews({ rating, text, id }: { rating: number
     }
 
     try {
-        const response = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/users?filters[username][$eq]=${username}`);
+        const response = await axios.get(`http://31.128.45.168:1337/api/users?filters[username][$eq]=${username}`);
         const currentUser = response.data[0];
 
         await axios.post(
-            `https://committed-life-48566f99cd.strapiapp.com/api/reviews?populate=*`,
+            `http://31.128.45.168:1337/api/reviews?populate=*`,
             {
                 "data": {
                     publishedAt: null,

@@ -25,7 +25,7 @@ export const fixTinaResults = <T>(data: T): T => {
 
 export default async function getvAilableStatus({ params }: { params: IParams }) {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=users`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/jobs?filters[slug][$eqi]=${params.slug}&populate=users`);
 
         const data = res
 

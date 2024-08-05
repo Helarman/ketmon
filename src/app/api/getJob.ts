@@ -6,7 +6,7 @@ interface IParams {
 
 export default async function getJob({ params }: { params: IParams }) {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/jobs?filters[slug][$eqi]=${params.slug}&populate=*`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/jobs?filters[slug][$eqi]=${params.slug}&populate=*`);
         const job = res.data.data[0];
 
         if (!job) {

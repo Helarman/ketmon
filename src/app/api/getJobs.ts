@@ -29,7 +29,7 @@ export default async function getJobs({ searchParams }: { searchParams: any }) {
     }
 
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/jobs?pagination[page]=${currentPage}&pagination[pageSize]=5&${searchQuery}populate=*`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/jobs?pagination[page]=${currentPage}&pagination[pageSize]=5&${searchQuery}populate=*`);
         const jobs = res.data;
 
         if (!jobs) {

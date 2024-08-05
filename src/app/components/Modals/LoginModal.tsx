@@ -35,7 +35,7 @@ const LoginModal = () => {
         setLoading(true);
 
         try {
-            const { data } = await axios.post(`https://committed-life-48566f99cd.strapiapp.com/api/auth/local`, {
+            const { data } = await axios.post(`http://31.128.45.168:1337/api/auth/local`, {
                 identifier: username,
                 password: password,
             });

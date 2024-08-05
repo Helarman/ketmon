@@ -18,7 +18,7 @@ export const fixTinaResults = <T>(data: T): T => {
 
 export default async function getLandlordRating({ id }: { id: number }) {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/reviews?filters[landlord][id][$eqi]=${id}&populate=*`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/reviews?filters[landlord][id][$eqi]=${id}&populate=*`);
         //.data.map((review: any) => review.attributes.users_permissions_user.data.attributes.username.toString())
         const ratings = res.data.data.map((review: ReviewProps) => review.attributes.rating)
        

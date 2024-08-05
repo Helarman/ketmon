@@ -9,7 +9,7 @@ interface CategoryProps {
 
 export default async function getCategories() {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/categories`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/categories`);
         const categories = res.data.data.map((category: CategoryProps) => category.attributes.name);
 
         if (!categories) {

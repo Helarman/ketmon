@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function getContacts() {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/contacts`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/contacts`);
 
         const contacts = res.data.data
 

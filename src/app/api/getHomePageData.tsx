@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function getHomePageData() {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/home-page?populate=deep`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/home-page?populate=deep`);
         
         const data = res.data
 

@@ -14,8 +14,8 @@ export default async function getScammers({ searchParams }: { searchParams: any 
     }
 
     try {
-        const res1 = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/employers?filters[isScammer][$eq]=true&${searchQuery}populate=*`);
-        const res2 = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/landlords?filters[isScammer][$eq]=true&${searchQuery}populate=*`);
+        const res1 = await axios.get(`http://31.128.45.168:1337/api/employers?filters[isScammer][$eq]=true&${searchQuery}populate=*`);
+        const res2 = await axios.get(`http://31.128.45.168:1337/api/landlords?filters[isScammer][$eq]=true&${searchQuery}populate=*`);
 
 
         const employerScammers = res1.data.data.map((employer: any) => ({ name: employer.attributes.name, type: 'Работодатель', city: employer.attributes.city.data.attributes.name, date: employer.attributes.scammerDate, contacts: employer.attributes.scammerContacts, reason: employer.attributes.scammerReason, proof: employer.attributes.scammerProofs }));

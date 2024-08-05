@@ -9,7 +9,7 @@ interface CityProps {
 
 export default async function getCities() {
     try {
-        const res = await axios.get(`https://committed-life-48566f99cd.strapiapp.com/api/cities`);
+        const res = await axios.get(`http://31.128.45.168:1337/api/cities`);
         const categories = res.data.data.map((city: CityProps) => city.attributes.name);
 
         if (!categories) {
