@@ -35,7 +35,7 @@ const RealEstateClient = ({ realEstate, isAvailable, currentUser, rating }: { re
                         <EmployerCard id={realEstate.attributes.landlord.data.id} name={realEstate.attributes.landlord.data.attributes.name} rating={rating} description={realEstate.attributes.landlord.data.attributes.description} adress={realEstate.attributes.landlord.data.attributes.locationName} />
                     </Grid>
                     <Grid item xs={12}>
-                        <Gallery images={realEstate.attributes.images}/>
+                        {realEstate.attributes.images && realEstate.attributes.images.data && <Gallery images={realEstate.attributes.images}/>}
                     </Grid>
                     <Grid item xs={12}>
                         <JobDescription description={realEstate.attributes.description} />
