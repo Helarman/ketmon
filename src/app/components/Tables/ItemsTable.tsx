@@ -92,9 +92,14 @@ function ItemsTable({ items, currentUser, avilableItemsIds }: { items: ItemsProp
               <TableCell sx={{ width: '20%' }}>{item.attributes.type}</TableCell>
               <TableCell sx={{ width: '20%' }}> {item.attributes.city.data ? item.attributes.city.data.attributes.name : 'Не укзан'}</TableCell>
               <TableCell sx={{ width: '20%' }}>
-                <Zoom>
-                  <img src={item.attributes.image.data.attributes.url} width="100px" height="100px" alt="" />
-                </Zoom>
+                {item.attributes.image && item.attributes.image.data && item.attributes.image.data.attributes.url ? 
+                  <Zoom>
+                    <img src={item.attributes.image.data.attributes.url} width="100px" height="100px" alt="" />
+                  </Zoom>
+                  :
+                  '-'
+
+                }
               </TableCell>
               <TableCell>
 

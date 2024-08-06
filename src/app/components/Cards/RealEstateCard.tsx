@@ -16,12 +16,25 @@ const RealEstateCard = ({ realEstate }: { realEstate: RealEstateProps }) => {
     return (
         <Card onClick={() => router.push(`/realestates/list/${realEstate.attributes.slug}`)}>
             <CardActionArea>
-                <CardMedia
-                    component="img"
-                    alt="Фото недвижимости"
-                    height="200"
-                    image={realEstate.attributes.images.data[0].attributes.url}
-                />
+                {realEstate.attributes.images && realEstate.attributes.images.data &&
+                    <CardMedia
+                        component="img"
+                        alt="Фото недвижимости"
+                        height="200"
+                        image={`http://31.128.45.168:1337${realEstate.attributes.images.data[0].attributes.url}`}
+                    />
+
+                }
+                  {!realEstate.attributes.images.data  &&
+
+                    <CardMedia
+                        component="img"
+                        alt="Фото недвижимости"
+                        height="200"
+                        image={`https://place-hold.it/800x400`}
+                    />
+
+                }
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         {createdDate} в {createdTime}

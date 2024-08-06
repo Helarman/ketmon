@@ -16,7 +16,7 @@ const RealEstateSearchSection = ({ cities, image }: { cities: string[], image: I
                     <RealEstateSearch cities={cities} />
                 </Grid>
                 <Grid item xs={12} lg={6} order={isSmallScreen ? 1 : 2} sx={{ textAlign: 'right' }}>
-                    <img src={image.data.attributes.url} style={{ width: '100%' }} />
+                    <img src={`http://31.128.45.168:1337${image.data.attributes.url}`} style={{ width: '100%' }} />
                 </Grid>
             </Grid>
         </Box>

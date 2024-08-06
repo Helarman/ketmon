@@ -32,7 +32,7 @@ const HelpClient = ({ data }: { data: AnswerProps[] }) => {
                     Помощь
                 </Typography>
                 <div>
-                    {data.map((question) => (
+                    {data && data.map((question) => (
                         <Accordion
                             key={question.id}
                             expanded={expanded === `panel${question.id + 1}`}
@@ -48,7 +48,7 @@ const HelpClient = ({ data }: { data: AnswerProps[] }) => {
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <BlocksRenderer content={question.attributes.content} />
+                                {question.attributes.content && <BlocksRenderer content={question.attributes.content} />}
                             </AccordionDetails>
                         </Accordion>
                     ))}
