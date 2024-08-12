@@ -23,7 +23,7 @@ const RootLayout = async ({
   children: React.ReactNode;
 }>) => {
   const currentUser = await getCurrentUser()
- 
+
   return (
     <html lang="en" className={inter.className}>
       <body
@@ -41,10 +41,10 @@ const RootLayout = async ({
           />
           <LoginModal />
           <RegistrationModal />
-          <Navbar currentUser={currentUser}/>
+          <Navbar currentUser={currentUser} />
           <Container maxWidth="xl" sx={{ mt: '100px' }}>
-            
-            {children}
+
+            <h1>{`:(`}</h1>
           </Container>
         </div>
         <div style={{ marginTop: 'auto' }} >
