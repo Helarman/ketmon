@@ -44,7 +44,7 @@ const RootLayout = async ({
           <Navbar currentUser={currentUser} />
           <Container maxWidth="xl" sx={{ mt: '100px' }}>
 
-            <h1>{`:(`}</h1>
+            {children}
           </Container>
         </div>
         <div style={{ marginTop: 'auto' }} >
