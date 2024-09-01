@@ -10,11 +10,11 @@ export const RecentRealEstate = ({ realEstates }: { realEstates: { realEstate: {
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500', mb: '30px' }}>
                 Топ 5 Уй-жойлари
             </Typography>
-            <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
+            <Grid container spacing={2} columns={5} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
 
                 {realEstates.map((realEstate) => (
 
-                    <Grid item xs={12} md={6} lg={3} >
+                    <Grid item xs={5} md={5} lg={1} >
                         <RealEstateCard realEstate={realEstate.realEstate.data} />
                     </Grid>
                 ))}

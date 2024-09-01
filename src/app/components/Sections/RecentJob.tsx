@@ -10,9 +10,9 @@ export const RecentJob = ({ jobs }: { jobs: { job: { data: JobProps } }[] }) => 
             <Typography variant="h4" gutterBottom sx={{ fontWeight: '500', mb: '30px' }}>
                 Топ 5 иш ўринлари
             </Typography>
-            <Grid container spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
+            <Grid container columns={5} spacing={2} sx={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
                 {jobs.map((job) => (
-                    <Grid item xs={12} md={6} lg={3} >
+                    <Grid item xs={5} md={5} lg={1}  >
                         <JobCard job={job.job.data} />
                     </Grid>
                 ))}
