@@ -16,7 +16,7 @@ interface IUser {
 
 export default async function getRealEstateAvilableStatus({ params }: { params: IParams }) {
     try {
-        const res = await axios.get(`http://31.128.45.168:1337/api/real-estates?filters[slug][$eqi]=${params.slug}&populate=*`);
+        const res = await axios.get(`https://excellent-chickens-fb25f11199.strapiapp.com/api/real-estates?filters[slug][$eqi]=${params.slug}&populate=*`);
         const users = res.data.data[0].attributes.users.data.map((user: IUser) => user.attributes.username.toString());
         const username = cookies().get("username")?.value;
 

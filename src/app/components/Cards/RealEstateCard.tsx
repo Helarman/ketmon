@@ -21,7 +21,7 @@ const RealEstateCard = ({ realEstate }: { realEstate: RealEstateProps }) => {
                         component="img"
                         alt="Фото недвижимости"
                         height="200"
-                        image={`http://31.128.45.168:1337${realEstate.attributes.images.data[0].attributes.url}`}
+                        image={`https://excellent-chickens-fb25f11199.strapiapp.com${realEstate.attributes.images.data[0].attributes.url}`}
                     />
 
                 }

@@ -28,7 +28,7 @@ export default async function getRealEstates({ searchParams }: { searchParams: a
     }
 
     try {
-        const res = await axios.get(`http://31.128.45.168:1337/api/real-estates?pagination[page]=${currentPage}&pagination[pageSize]=18&${searchQuery}populate=*`);
+        const res = await axios.get(`https://excellent-chickens-fb25f11199.strapiapp.com/api/real-estates?pagination[page]=${currentPage}&pagination[pageSize]=18&${searchQuery}populate=*`);
         const realEstates = res.data;
 
         if (!realEstates) {

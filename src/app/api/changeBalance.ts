@@ -7,7 +7,7 @@ export async function setBalance({ currentUser, value }: { currentUser: UserProp
 
     try {
         await axios.put(
-            `http://31.128.45.168:1337/api/users/${currentUser.id}`,
+            `https://excellent-chickens-fb25f11199.strapiapp.com/api/users/${currentUser.id}`,
             {
                 balance: value
             }

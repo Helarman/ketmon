@@ -58,7 +58,7 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ title, subTitle, buttons, image
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} sx={{ height: { xs: '', md: '30rem' }, display: 'flex' }}>
-                    <img src={`http://31.128.45.168:1337${image}`} alt={title} style={{ width: '100%', borderRadius: '8px' }} />
+                    <img src={`https://excellent-chickens-fb25f11199.strapiapp.com${image}`} alt={title} style={{ width: '100%', borderRadius: '8px' }} />
                 </Grid>
             </Grid>
         </Box >

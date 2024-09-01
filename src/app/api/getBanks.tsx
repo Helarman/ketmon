@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function getBanks() {
     try {
-        const res = await axios.get(`http://31.128.45.168:1337/api/banks`);
+        const res = await axios.get(`https://excellent-chickens-fb25f11199.strapiapp.com/api/banks`);
 
         const banks = res.data.data
 

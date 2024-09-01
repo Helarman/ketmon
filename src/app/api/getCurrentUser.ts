@@ -9,7 +9,7 @@ export const getCurrentUser = async () => {
     }
 
     try {
-        const response = await axios.get(`http://31.128.45.168:1337/api/users?filters[username][$eq]=${username}`);
+        const response = await axios.get(`https://excellent-chickens-fb25f11199.strapiapp.com/api/users?filters[username][$eq]=${username}`);
         return response.data[0];
 
     } catch (error) {
