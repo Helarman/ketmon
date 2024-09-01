@@ -16,7 +16,7 @@ const JobSearchSection = ({ cities, categories, image }: { cities: string[], cat
                     <JobSearch categories={categories} cities={cities} />
                 </Grid>
                 <Grid item xs={12} lg={6} order={isSmallScreen ? 1 : 2}>
-                    <img src={`https://excellent-chickens-fb25f11199.strapiapp.com${image.data.attributes.url}`} style={{ width: '100%' }} />
+                    <img src={image.data.attributes.url} style={{ width: '100%' }} />
                 </Grid>
             </Grid>
         </Box>
